@@ -1,0 +1,48 @@
+.menu{
+  color: #fff;
+  background: url(../img/menu/menu_bg.jpg) center center / cover no-repeat;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.menu__list{
+  display: flex;
+}
+.menu__item {
+  display: flex;
+  overflow: hidden;
+}
+.menu__block {
+  display: flex;
+  width: 80px;
+  justify-content: flex-end;
+  align-items: flex-end;
+  cursor: pointer;
+}
+.menu__subtitle {
+  font-size: 3rem;
+  padding-left: 50px;
+  transform-origin: 100% 100%;
+  transform: rotate(-90deg) translate(100%);
+  white-space: nowrap;
+  line-height: 80px;
+}
+.menu-milk{
+  background: url(../img/menu/milk.jpg) center center / cover no-repeat;
+}
+.menu-fruit{
+  background: url(../img/menu/fruit.jpg) center center / cover no-repeat;
+}
+.menu-berry{
+  background: url(../img/menu/berry.jpg) center center / cover no-repeat;
+}
+.menu__desc {
+  width: 0;
+  color: transparent;
+  background-color:rgba(0, 0, 0, 0.7);
+  transition: all ease 0.4s;
+}
+.menu__item--active .menu__desc{
+  width: 40vw;
+  color: #fff;
+  padding: 50px 30px;
+}

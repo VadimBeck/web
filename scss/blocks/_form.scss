@@ -1,0 +1,131 @@
+.form{
+  background: url(../img/form/form_bg.jpg) center center / cover no-repeat;
+  align-items: center;
+  justify-content: center;
+  color: $green;
+  position: relative;
+
+  &::before{    
+    content: url(../img/form/form_left.png);
+    position: absolute;
+    left: 1%;
+    bottom: 6%;
+  }
+  &::after{
+    content: url(../img/form/form_right.png);
+    position: absolute;
+    right: 4px;
+    bottom: 0;
+  }
+}
+.form__wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: $mediumFont;
+}
+.form__content {
+  display: flex;
+  flex-wrap: wrap;
+}
+.form__block{
+  width: 100%;
+  margin-right: 20px;
+  margin-bottom: 10px;  
+}
+.form__column{
+  flex: 1 0 300px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.form__row{
+ display: flex;
+ width: 100%;
+}
+.form-entry{
+  width: 100%;
+  padding: 10px;
+  border-radius: 2px;
+  border: 2px solid  transparent;
+  outline: none;
+  margin-top: 5px;
+}
+.form-entry:focus{
+  border-color: $yellow;
+}
+.form__textarea {
+  resize: none;
+  min-height: 130px;
+}
+.form__pay {
+  margin-bottom: 5px;
+}
+.form__radio {
+  position: relative;
+  margin-right: 10px;
+  padding-left: 10px;
+}
+.form__radio-btn {
+  opacity: 0;
+}
+.form__radio-text::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background-color: #fff;
+  border-radius: 50%;
+  top: 0;
+  left: 0;
+}
+.form__radio-text::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;  
+  top: 4px;
+  left: 4px;
+}
+.form__radio-btn:checked ~ .form__radio-text::after{
+  background-color: $green;
+}
+.form__check {
+  position: relative;
+  padding-left: 10px;
+}
+.form__check-btn {
+  opacity: 0;
+}
+.form__check-text::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background-color: #fff;
+  top: 0;
+  left: 0;
+}
+.form__check-text::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 4px;
+  top: 1px;
+  width: 4px;
+  height: 8px;
+  border: solid transparent;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+}
+.form__check-btn:checked ~ .form__check-text:after {
+  border-color: $green;
+}
+.form__order {
+  width: 100%;
+  padding-left: 50%;
+}

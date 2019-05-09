@@ -1,0 +1,33 @@
+.header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav__list {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;  
+}
+.nav__item {
+  margin-right: 27px;
+
+  &:last-child{
+    margin-right: 0;
+  }
+}
+.logo__link{
+  display: inline-block;
+}
+.logo__img{
+  max-width: 50px;
+  max-height: 50px;
+}
+.company-phone__num{
+  font-size: 1.45rem;
+}
+.company-phone__img{
+  width: 12px;
+  height: 12px;
+  margin-right: 5px;
+  fill: #fff;
+}

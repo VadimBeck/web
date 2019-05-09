@@ -1,0 +1,45 @@
+.work{
+  background-color: $lightGrey;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+  &:before {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    bottom: 10%;
+    width: 70%;
+    height: 70%;
+    background: url(../img/work/video_leafs.png) center center / contain no-repeat;
+  }
+
+  &::after {
+    content: url(../img/work/black.png);
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    transform: translateY(50%);
+    z-index: 1;
+  }
+}
+.work__content {
+  position: relative;
+  z-index: 1;
+  width: 60%;
+  align-self: center;
+}
+.work__video {  
+  max-width: 100%;
+}
+.work__btn{
+  position: absolute;
+  width: 50%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.work__btn-img{
+  max-width: 100%;
+  max-height: 100%;
+}

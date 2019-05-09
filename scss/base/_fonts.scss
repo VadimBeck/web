@@ -1,0 +1,39 @@
+@font-face {
+  font-family: 'Alegreya Sans';
+  src: url('../fonts/alegreyasans-light.woff2') format('woff2'),
+       url('../fonts/alegreyasans-light.woff') format('woff');
+  font-weight: $lightFont;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Alegreya Sans';
+  src: url('../fonts/alegreyasans-regular.woff2') format('woff2'),
+       url('../fonts/alegreyasans-regular.woff2') format('woff');
+  font-weight: $regularFont;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Alegreya Sans';
+  src: url('../fonts/alegreyasans-medium.woff2') format('woff2'),
+       url('../fonts/alegreyasans-medium.woff2') format('woff');
+  font-weight: $mediumFont;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Alegreya Sans';
+  src: url('../fonts/alegreyasans-bold.woff2') format('woff2'),
+       url('../fonts/alegreyasans-bold.woff2') format('woff');
+  font-weight: $boldFont;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Alegreya Sans';
+  src: url('../fonts/alegreyasans-extrabold.woff') format('woff2'),
+       url('../fonts/alegreyasans-extrabold.woff') format('woff');
+  font-weight: $extraBoldFont;
+  font-style: normal;
+}

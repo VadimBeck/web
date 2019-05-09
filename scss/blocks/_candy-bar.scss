@@ -1,0 +1,81 @@
+.candy-bar{
+  background-color: $lightGrey;
+  position: relative;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 3%;
+
+  &::after{
+    content: url(../img/candy-bar/leaf_2.png);
+    position: absolute;
+    right: 0;
+    top: 100%;
+    transform: translateY(-40%);
+  }
+}
+
+.candy-bar__list{
+  display: flex;
+}
+.candy-bar__item{
+  @include flex;
+  width: 0;
+  overflow: hidden;
+  flex-wrap: wrap;
+  transition: .4s;
+
+  &--active {
+    width: initial;
+  }
+}
+.candy-bar__img {
+  flex: 1 1 45%;
+  margin-right: 5%;
+}
+.candy-bar__text {
+  flex: 1 1 45%;
+}
+.candy-bar__img-pic{
+  max-width: 100%;
+  max-height: 100%;
+}
+.candy-bar__consist{
+  font-weight: $mediumFont;
+}
+.candy-bar__desc {
+  color: $garkGrey;
+  width: 80%;
+  margin: 20px 0;
+}
+.candy-bar__specs {
+  display: flex;
+}
+.candy-bar__calorie {
+  margin-right: 20px;
+}
+.candy-bar__calorie-value, .candy-bar__weight-value{
+  font-weight: $boldFont;
+}
+.candy-bar__order{
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+.candy-bar__price{
+  font-size: 3rem;
+  margin-right: 20px;
+}
+.scroll-btn {
+  align-self: center;
+  outline: none;
+}
+.scroll-btn__img {
+  width: 25px;
+  height: 35px;  
+}
+.scroll-btn__img--back {
+  transform: rotate(90deg);
+}
+.scroll-btn__img--forward {
+  transform: rotate(-90deg) translate(15%);
+}

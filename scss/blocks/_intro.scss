@@ -1,0 +1,59 @@
+.intro{
+  color: #fff;
+  background-color: $blue;  
+  background-image: url(../img/intro/intro_bg.png);
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  background-size: contain;  
+  position: relative;
+
+  &::before{
+    content: url(../img/intro/fructs_left.png);
+    position: absolute;
+    display: block;
+    bottom: 0;
+    left: 2%;
+    transform: translateY(50%);
+  }
+  &::after{
+    content: "";
+    position: absolute;
+    display: block;
+    width: 50%;
+    height: 55%;
+    bottom: 0;
+    right: 1%;
+    transform: translateY(15%);
+    background: url(../img/intro/fructs_right.png) right bottom / contain no-repeat;
+  }
+}
+
+.intro__info {
+  width: 60%;
+  flex: 0.9;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.intro__text{
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+.advantages__list{
+  display: flex;
+  justify-content: flex-start;
+  width: 60%;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+.advantages__item{
+  display: flex;
+  align-items: flex-start;
+  margin-right: 3rem; 
+}
+.advantages__img{
+  max-width: 100%;
+  max-height: 100%;
+  margin-right: 10px;
+}

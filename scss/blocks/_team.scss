@@ -1,0 +1,71 @@
+.team{
+  position: relative;
+
+  &::after{
+    content: url(../img/team/malina.png);
+    position: absolute;
+    left: 3%;
+    top: 100%;
+    transform: translateY(-50%);
+    z-index: 1;
+  }
+}
+.team__list{
+  display: flex;
+  justify-content: center; 
+  align-items: flex-start;
+  flex: 0.5;
+  margin-top: 30px;
+}
+.team__item{
+  width: 25%;
+  margin-right: 15px;
+  text-align: center;
+  
+  &:nth-child(2n){
+    margin-top: 40px;
+  }
+}
+.member__img{
+  height: 280px;
+  margin-bottom: 20px;
+}
+.member__img-pic{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.member__name {
+  cursor: pointer;
+  font-weight: $mediumFont;
+}
+.member__desc{
+  font-weight: $lightFont;
+  color: $garkGrey;
+  margin-top: 5px;
+  line-height: 1.2;
+}
+.member__name::after {
+  content: "";
+  font-size: 0;
+  margin-left: 5px;
+  border: 8px solid transparent;
+  border-top-color: $green;
+  border-bottom-width: 0px;
+  border-left-width: 6px;
+  border-right-width: 6px;
+  
+}
+.member__text{
+  opacity: 0;  
+  overflow: hidden;  
+}
+.member--active .member__text {  
+  opacity: 1;
+  transition: all ease .3s;
+}
+.member--active .member__name::after {
+  border-bottom-color: $green;
+  display: inline-block;
+  transform: rotate(180deg);
+}

@@ -1,0 +1,37 @@
+.footer{
+  padding: 10px 0;
+  width: 940px;
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+}
+.company-contacts{
+  font-style: normal;  
+}
+.footer-num{
+  color: $green;
+  font-weight: $lightFont;
+}
+.footer-phone{
+  fill: $green;
+}
+.socials__list {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: flex-end;
+}
+.socials__item {
+  width: 20px;
+  height: 20px;
+  margin-left: 20px;
+}
+.socials__img{
+  max-width: 100%;
+  max-height: 100%;
+  fill: #b2b2b2;
+  transition: all ease .2s;
+}
+.socials__img:hover {
+  fill: #000;
+}
