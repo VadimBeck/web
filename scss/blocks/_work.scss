@@ -8,9 +8,9 @@
     content: "";
     position: absolute;
     z-index: 0;
-    bottom: 10%;
-    width: 70%;
-    height: 70%;
+    bottom: 5%;
+    width: 80%;
+    height: 80%;
     background: url(../img/work/video_leafs.png) center center / contain no-repeat;
   }
 
@@ -26,7 +26,7 @@
 .work__content {
   position: relative;
   z-index: 1;
-  width: 60%;
+  width: 70%;
   align-self: center;
 }
 .work__video {  
@@ -38,6 +38,7 @@
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+  outline: none;
 }
 .work__btn-img{
   max-width: 100%;

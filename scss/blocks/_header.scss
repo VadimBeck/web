@@ -2,28 +2,29 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;  
+  z-index: 2;
+}
+.nav{
+  width: 68%;
 }
 .nav__list {
   display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;  
-}
-.nav__item {
-  margin-right: 27px;
-
-  &:last-child{
-    margin-right: 0;
-  }
+  justify-content: space-between;  
 }
 .logo__link{
   display: inline-block;
 }
-.logo__img{
+.logo{
   max-width: 50px;
   max-height: 50px;
 }
-.company-phone__num{
-  font-size: 1.45rem;
+.logo__img{
+  max-width: 100%; 
+}
+
+.company-phone{
+  font-size: rem(24px); 
 }
 .company-phone__img{
   width: 12px;

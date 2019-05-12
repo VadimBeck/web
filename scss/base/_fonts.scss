@@ -37,3 +37,11 @@
   font-weight: $extraBoldFont;
   font-style: normal;
 }
+
+@font-face {
+  font-family: 'OpenSans';
+  src: url('../fonts/opensans.woff') format('woff2'),
+       url('../fonts/opensans.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}

@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Chocco</title> 
 
@@ -10,7 +10,7 @@
 </head>
 <body>  
   <div class="wrapper">
-
+    
     <section class="section intro">
       <div class="container">
         <header class="header">
@@ -54,23 +54,33 @@
           <p class="intro__text">Наши батончики идеально подходят для<br> тех, кто следит за своим здоровьем</p>
           <button class="order-button intro-button">Заказать</button>
         </div>
+        <div class="intro__img">
+          <img src="./img/intro/bars.png" alt="Батончики Chocco" class="intro__img-pic">
+        </div>
+        
         <div class="advantages">
           <ul class="advantages__list">
             <li class="advantages__item">
-              <img src="./img/intro/natural.png" alt="" class="advantages__img">           
+              <svg class="advantages__img"> 
+                <use xlink:href='./img/sprite.svg#natural'></use>
+              </svg>            
               <div class="advantages__text">100%<br> натуральный<br> продукт</div>
             </li>
-            <li class="advantages__item">
-              <img src="./img/intro/delivery.png" alt="" class="advantages__img">
+            <li class="advantages__item">              
+              <svg class="advantages__img"> 
+                <use xlink:href='./img/sprite.svg#delivery'></use>
+              </svg>
               <div class="advantages__text">3-5 дней<br> доставка<br> по РФ</div>
             </li>
             <li class="advantages__item">
-              <img src="./img/intro/roulette.png" alt="" class="advantages__img">
+              <svg class="advantages__img"> 
+                <use xlink:href='./img/sprite.svg#ruler'></use>
+              </svg>
               <div class="advantages__text">Не портит<br> фигуру</div>
             </li>
           </ul>
         </div> 
-      </div>    
+      </div>
 
     </section>
     
@@ -83,8 +93,10 @@
         <ul class="reasons__list">
               <li class="reasons__item benefit">
                   <div class="benefit__img">
-                    <div class="benefit__img-wrap">
-                      <img src="./img/reasons/person.png" alt="" class="benefit__img-pic">        
+                    <div class="benefit__img-wrap">                      
+                      <svg class="benefit__img-pic"> 
+                        <use xlink:href='./img/sprite.svg#person'></use>
+                      </svg>        
                     </div>
                   </div>
                   <div class="benefit__text">
@@ -95,7 +107,9 @@
                 <li class="reasons__item benefit">
                   <div class="benefit__img">
                     <div class="benefit__img-wrap">
-                      <img src="./img/reasons/smile.png" alt="" class="benefit__img-pic">
+                      <svg class="benefit__img-pic"> 
+                          <use xlink:href='./img/sprite.svg#smile'></use>
+                      </svg> 
                     </div>
                   </div>
                   <div class="benefit__text">
@@ -106,7 +120,9 @@
                 <li class="reasons__item benefit">
                   <div class="benefit__img">
                     <div class="benefit__img-wrap">
-                      <img src="./img/reasons/muscle.png" alt="" class="benefit__img-pic">
+                      <svg class="benefit__img-pic"> 
+                        <use xlink:href='./img/sprite.svg#muscle'></use>
+                      </svg> 
                     </div>
                   </div>
                   <div class="benefit__text">
@@ -156,7 +172,7 @@
               <img src="./img/candy-bar/bar2.png" alt="" class="candy-bar__img-pic">
             </div>
             <div class="candy-bar__text">
-              <h2 class="paige-title candy-bar-title">Батончик "гранола виноград"</h2>
+              <h2 class="paige-title candy-bar__title">Батончик "гранола виноград"</h2>
               <span class="candy-bar__consist">Состав:</span>
               <p class="candy-bar__desc">Гранола из винограда, грецкого ореха и кунжутных семечек. В состав также входят: сухое молоко, заменитель сахара и какао бобы.</p>
               <div class="candy-bar__specs">
@@ -325,7 +341,7 @@
       <div class="container">
         <div class="form__wrapper">
           <form action="#" class="form__delivery">
-            <h2 class="paige-title">Закажите доставку</h2>
+            <h2 class="paige-title form__title">Закажите доставку</h2>
             <div class="form__content">
               <div class="form__column">
                 <div class="form__row">
@@ -365,7 +381,7 @@
               </div>
               <div class="form__column">
                 <div class="form__row">
-                  <label class="form__block">
+                  <label class="form__block form__block--none">
                     <div class="form__sub">Комментарий</div>
                     <textarea class="form__textarea form-entry" name="textarea"></textarea>
                   </label>

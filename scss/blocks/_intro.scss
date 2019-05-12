@@ -1,11 +1,11 @@
 .intro{
   color: #fff;
   background-color: $blue;  
-  background-image: url(../img/intro/intro_bg.png);
+  background-image: url(../img/intro/intro.png);
   background-repeat: no-repeat;
   background-position: right bottom;
   background-size: contain;  
-  position: relative;
+  
 
   &::before{
     content: url(../img/intro/fructs_left.png);
@@ -21,11 +21,27 @@
     display: block;
     width: 50%;
     height: 55%;
+    max-height: 400px;
     bottom: 0;
     right: 1%;
     transform: translateY(15%);
     background: url(../img/intro/fructs_right.png) right bottom / contain no-repeat;
   }
+}
+.intro__img {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  right: 0;
+  width: 50%;  
+  max-width: 700px;
+  height: 100%;
+  z-index: 0;
+}
+.intro__img-pic {
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .intro__info {
@@ -37,23 +53,29 @@
   align-items: flex-start;
 }
 .intro__text{
-  font-size: 1.2rem;
-  margin-bottom: 20px;
+  font-size: rem(21px);
+  margin-bottom: rem(30px);
+  line-height: 1.2;
 }
 .advantages__list{
   display: flex;
   justify-content: flex-start;
   width: 60%;
-  font-size: 14px;
-  margin-bottom: 10px;
+  font-size: rem(16px);
+  line-height: 1.2;
+  padding-bottom: 0.5em;
 }
 .advantages__item{
   display: flex;
   align-items: flex-start;
-  margin-right: 3rem; 
+  margin-right: 2.7rem; 
 }
 .advantages__img{
+  width: 45px;
+  max-height: 45px;
+  margin-right: rem(10px);
+}
+.advantages__img-pic{
   max-width: 100%;
   max-height: 100%;
-  margin-right: 10px;
 }

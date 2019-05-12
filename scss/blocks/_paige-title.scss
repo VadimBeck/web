@@ -1,24 +1,31 @@
 .paige-title {
   text-transform: uppercase;
   font-weight: $boldFont;
-  font-size: 3rem;
-  line-height: 1.1em;
+  font-size: rem(48px);
+  line-height: 1.1;
   text-align: center;
   margin-bottom: 0.5rem;
 }
 .intro__title{   
-  font-size: 3.5rem;
+  font-size: rem(60px);
+  line-height: 1;
   text-align: left;
 }
 .candy-bar__title {
   text-align: left;
-  font-size: 2rem;
-  line-height: 1.2;
+  font-size: rem(36px);  
+  margin-bottom: rem(30px);
 }
-.reviews__title{
-  margin-bottom: 50px;
+.team__title{
+  margin-bottom: rem(60px);
 }
 .menu__title{
-  margin-top: 100px;
-  margin-left: 60px;
+  margin-top: rem(90px);
+  margin-left: rem(70px);
+}
+.reviews__title{
+  margin-bottom: rem(50px);
+}
+.form__title{
+  margin-bottom: rem(45px);
 }

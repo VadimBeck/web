@@ -1,12 +1,12 @@
 html, body {
   height: 100%;
+  font-size: 18px;
 }
 body {
   font-family: 'Alegreya Sans', Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: $regularFont;
-  font-size: 18px;
   line-height: 1.42; 
 }
 .wrapper {
@@ -17,7 +17,7 @@ body {
 }
 .section {
   height: 100vh;
-  min-height: 600px;
+  min-height: 650px;
   display: flex;
   justify-content: center;
 }
@@ -51,10 +51,15 @@ table {
 p {
   margin: 0;
 }
-a{
+a {
   text-decoration: none;
   color: inherit;
 }
 * {
   box-sizing: border-box;
+}
+@media (max-width: 768px) {
+  .container {
+    max-width: 470px;
+  }
 }

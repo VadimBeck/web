@@ -1,9 +1,12 @@
 .footer{
   padding: 10px 0;
-  width: 940px;
+  width: 100%;
+  max-width: 940px;
+  align-self: center;
   display: flex;
   justify-content: space-between;
   margin: auto;
+  font-size: rem(21px);
 }
 .company-contacts{
   font-style: normal;  
@@ -21,9 +24,9 @@
   justify-content: flex-end;
 }
 .socials__item {
-  width: 20px;
-  height: 20px;
-  margin-left: 20px;
+  width: rem(20px);
+  height: rem(20px);
+  margin-left: rem(20px);
 }
 .socials__img{
   max-width: 100%;

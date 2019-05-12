@@ -15,13 +15,14 @@
 }
 .reasons__text{
   text-align: center;
-  margin-bottom: 50px;
+  margin-bottom: rem(50px);
+  line-height: 1.2;
 }
 
 .reasons__list{  
   display: flex;  
   justify-content: space-between;
-  margin-bottom: 20px;
+  margin-bottom: rem(20px);
 }
 .reasons__item{
   text-align: center;  
@@ -34,8 +35,8 @@
     display: inline-block;
     width: 100%;
     height: 20px;
-    left: -100%;
-    top: 20%;
+    left: -109%;
+    top: 55px;
     transform: translate(50%, 0);
     background: url(../img/reasons/middle.png) center center / contain no-repeat;
   }
@@ -46,26 +47,40 @@
 }
 
 .benefit__img {
-  margin-bottom: 30px;  
+  margin-bottom: rem(30px); 
 }
 .benefit__img-wrap{
-  width: 125px;
-  height: 125px;
+  width: rem(125px);
+  height: rem(125px);
   margin: 0 auto;  
   background-color: $grey;
   border-radius: 50%;
   @include flex;
 }
 .benefit__img-pic{
-  max-width: 100%;
-  max-height: 100%;
+  max-width: 60%;
+  max-height: 60%;
 }
 .benefit__title{
   font-weight: $boldFont;
-  font-size: 1.7rem;
-  margin-bottom: 1rem;
+  font-size: rem(27px);
+  margin-bottom: rem(16px);
 }
 .benefit__desc{
   color: $garkGrey;
   line-height: 1.2;
+}
+
+@media (max-width: 768px) {
+  .reasons__list {
+    flex-direction: column;
+    align-items: center;
+  }
+  .reasons__item {
+    width: 60%;
+
+    &::before {
+      display: none;
+    }
+  }
 }

@@ -21,19 +21,19 @@
   @include flex;
   width: 0;
   overflow: hidden;
-  flex-wrap: wrap;
-  transition: .4s;
+  //flex-wrap: wrap;
 
   &--active {
     width: initial;
   }
 }
 .candy-bar__img {
-  flex: 1 1 45%;
-  margin-right: 5%;
+  flex: 1 1 50%;
+  margin-right: rem(80px);
 }
 .candy-bar__text {
   flex: 1 1 45%;
+  line-height: 1.2;
 }
 .candy-bar__img-pic{
   max-width: 100%;
@@ -41,17 +41,19 @@
 }
 .candy-bar__consist{
   font-weight: $mediumFont;
+  font-size: rem(24px);
 }
 .candy-bar__desc {
   color: $garkGrey;
   width: 80%;
-  margin: 20px 0;
+  margin-top: rem(20px);
+  margin-bottom: rem(50px);
 }
 .candy-bar__specs {
   display: flex;
 }
 .candy-bar__calorie {
-  margin-right: 20px;
+  margin-right: rem(50px);
 }
 .candy-bar__calorie-value, .candy-bar__weight-value{
   font-weight: $boldFont;
@@ -59,23 +61,35 @@
 .candy-bar__order{
   display: flex;
   align-items: center;
-  margin-top: 20px;
+  margin-top: rem(20px);
 }
 .candy-bar__price{
-  font-size: 3rem;
-  margin-right: 20px;
+  font-size: rem(60px);
+  margin-right: rem(20px);
 }
 .scroll-btn {
   align-self: center;
   outline: none;
 }
 .scroll-btn__img {
-  width: 25px;
-  height: 35px;  
+  width: 30px;
+  height: 40px;  
 }
 .scroll-btn__img--back {
   transform: rotate(90deg);
 }
 .scroll-btn__img--forward {
   transform: rotate(-90deg) translate(15%);
+}
+@media (max-width: 768px) {
+  .candy-bar__item {
+    flex-direction: column;
+    align-items: center;
+  }
+  .candy-bar__img {
+    margin-right: 0;
+  }
+  .candy-bar__text {
+    text-align: center;
+  }
 }
