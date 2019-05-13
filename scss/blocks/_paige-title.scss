@@ -29,3 +29,12 @@
 .form__title{
   margin-bottom: rem(45px);
 }
+
+@media (max-width: 768px) {
+  .intro__title{
+    text-align: center;
+  }
+  .candy-bar__title {
+    text-align: center;
+  }
+}

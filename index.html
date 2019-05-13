@@ -42,20 +42,25 @@
               </li>
             </ul>
           </nav>
-          <a href="tel:+78009039090" class="company-phone">
+          <a href="tel:+78009039090" class="company-phone header__phone">
             <svg class="company-phone__img"> 
               <use xlink:href='./img/sprite.svg#phone'></use>
             </svg>
             <span class="company-phone__num">8 800 903 90 90</span>
           </a>
+          <button class="menu-btn">
+            <div class="menu-btn__inner"></div>
+          </button>
         </header>
-        <div class="intro__info">
-          <h1 class="paige-title intro__title">Натуральные шоколадные батончики</h1>
-          <p class="intro__text">Наши батончики идеально подходят для<br> тех, кто следит за своим здоровьем</p>
-          <button class="order-button intro-button">Заказать</button>
-        </div>
-        <div class="intro__img">
-          <img src="./img/intro/bars.png" alt="Батончики Chocco" class="intro__img-pic">
+        <div class="intro__content">
+          <div class="intro__content-info">
+            <h1 class="paige-title intro__title">Натуральные шоколадные батончики</h1>
+            <p class="intro__text">Наши батончики идеально подходят для<br> тех, кто следит за своим здоровьем</p>
+            <button class="order-button intro-button">Заказать</button>
+          </div>
+          <div class="intro__content-img">
+            <img src="./img/intro/bars.png" alt="Батончики Chocco" class="intro__img-pic">
+          </div>
         </div>
         
         <div class="advantages">
@@ -64,19 +69,19 @@
               <svg class="advantages__img"> 
                 <use xlink:href='./img/sprite.svg#natural'></use>
               </svg>            
-              <div class="advantages__text">100%<br> натуральный<br> продукт</div>
+              <div class="advantages__text">100% натуральный продукт</div>
             </li>
             <li class="advantages__item">              
               <svg class="advantages__img"> 
                 <use xlink:href='./img/sprite.svg#delivery'></use>
               </svg>
-              <div class="advantages__text">3-5 дней<br> доставка<br> по РФ</div>
+              <div class="advantages__text">3-5 дней доставка по РФ</div>
             </li>
             <li class="advantages__item">
               <svg class="advantages__img"> 
                 <use xlink:href='./img/sprite.svg#ruler'></use>
               </svg>
-              <div class="advantages__text">Не портит<br> фигуру</div>
+              <div class="advantages__text">Не&nbsp;портит фигуру</div>
             </li>
           </ul>
         </div> 
@@ -363,25 +368,25 @@
                 <div class="form__row">
                   <label class="form__block">
                     <div class="form__sub">Дом</div>
-                    <input class="form__input form-entry" type="text">
+                    <input class="form-entry form-entry--center" type="text">
                   </label>
                   <label class="form__block">
                     <div class="form__sub">Корпус</div>
-                    <input class="form__input form-entry" type="text">
+                    <input class="form-entry form-entry--center" type="text">
                   </label>
                   <label class="form__block">
                     <div class="form__sub">Квартира</div>
-                    <input class="form__input form-entry" type="text">
+                    <input class="form-entry form-entry--center" type="text">
                   </label>
                   <label class="form__block">
                     <div class="form__sub">Этаж</div>
-                    <input class="form__input form-entry" type="text">
+                    <input class="form-entry form-entry--center" type="text">
                   </label>
                 </div>
               </div>
               <div class="form__column">
                 <div class="form__row">
-                  <label class="form__block form__block--none">
+                  <label class="form__block">
                     <div class="form__sub">Комментарий</div>
                     <textarea class="form__textarea form-entry" name="textarea"></textarea>
                   </label>
