@@ -7,3 +7,9 @@
 @function rem($px) {
   @return ($px/18px)+0rem;
 }
+
+@mixin max-desktop {
+  @media screen and ( min-width: 1920px ) {
+    @content;
+  }
+}

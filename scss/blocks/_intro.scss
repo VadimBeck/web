@@ -1,12 +1,32 @@
 .intro{
   color: #fff;
   background-color: $blue;  
-  background-image: url(../img/intro/intro.png);
   background-repeat: no-repeat;
   background-position: right bottom;
   background-size: contain;
-  overflow-x: hidden;
-
+  &::before{
+    content: url(../img/intro/intro.png);
+    position: absolute;
+    display: block;
+    bottom: 0;
+    right: 0;
+  }
+  @include max-desktop{
+    &::after{
+      content: url(../img/intro/intro.png);
+      position: absolute;
+      display: block;
+      top: 0;
+      left: 0;
+      transform: rotate(180deg);
+      z-index: 0;
+    }
+  }
+ 
+}
+.intro__container{
+  z-index: 1;
+  position: relative;
   &::before{
     content: url(../img/intro/fructs_left.png);
     position: absolute;
