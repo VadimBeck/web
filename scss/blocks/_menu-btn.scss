@@ -1,0 +1,57 @@
+.menu-btn{
+  //position: relative;
+  position: absolute;
+  display: inline-block;  
+  overflow: hidden;
+  outline: none;
+  padding: 0;  
+  @include tablets {
+    position: relative;
+    width: 24px;
+    height: 24px;
+  }
+}
+.menu-btn__inner{
+  position: absolute;
+  width: 24px;
+  height: 4px;
+  background-color: #fff;
+  border-radius: 5px;
+  top: 10px;
+
+  &::before, &::after {
+    content: "";
+    position: absolute;
+    width: 24px;
+    height: 4px;
+    background-color: #fff;
+    border-radius: 5px;
+    right: 0;
+    transition: transform  0.1s 0s;      
+  }
+  &::before {    
+    top: -10px;    
+    transition: top 0s .3s;    
+  }
+  &::after {   
+    bottom: -10px;    
+    transition: bottom 0s .3s;    
+  }
+}
+.menu-btn.is-active .menu-btn__inner{
+  background: none;
+
+  &::before{
+    top: 0;
+    transform: rotate(-45deg);
+    transition: top 0.3s 0s;
+    transition: transform 0.3s 0s;    
+  }
+  &::after{
+    bottom: 0;
+    transform: rotate(45deg); 
+    transition: top 0.3s 0s;
+    transition: transform 0.3s 0s; 
+  }
+}
+

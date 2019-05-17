@@ -2,38 +2,68 @@
   background-color: $lightGrey;
   position: relative;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   padding: 0 3%;
 
   &::after{
-    content: url(../img/candy-bar/leaf_2.png);
     position: absolute;
+    content: "";
+    width: 20%;
+    max-width: 200px;
+    height: 100%;
+    background: url(../img/candy-bar/leaf_2.png) right center / contain no-repeat;
     right: 0;
-    top: 100%;
-    transform: translateY(-40%);
+    top: 55%;
+    @include tablets {
+      top: 54%;
+      background-position: 6vw;
+    }
+  }
+  
+}
+.candy-bar__container{
+  max-width: 1000px;
+  @include tablets {
+    max-width: 460px; 
   }
 }
 
+.candy-bar__slider{
+  display: flex;
+  justify-content: space-between;
+}
 .candy-bar__list{
   display: flex;
 }
-.candy-bar__item{
-  @include flex;
+
+.candy-bar__slide{
+  @include flex(space-between,center);
   width: 0;
   overflow: hidden;
-  //flex-wrap: wrap;
-
-  &--active {
+  @include tablets {
+    flex-direction: column;
+    justify-content: center;   
+  }
+  &.is-active {
     width: initial;
   }
 }
 .candy-bar__img {
-  flex: 1 1 50%;
-  margin-right: rem(80px);
+  width: 50%;
+  @include tablets {
+    width: 93%;
+  }
 }
 .candy-bar__text {
-  flex: 1 1 45%;
+  width: 43%;
   line-height: 1.2;
+  padding-top: rem(30px);
+  @include tablets {
+    @include flex(center,center);
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+  }
 }
 .candy-bar__img-pic{
   max-width: 100%;
@@ -45,12 +75,23 @@
 }
 .candy-bar__desc {
   color: $garkGrey;
-  width: 80%;
+  max-width: 90%;
   margin-top: rem(20px);
   margin-bottom: rem(50px);
+  @include tablets {
+    max-width: 100%;
+    margin-bottom: rem(30px);
+  }
+  @include phones {
+    max-width: 100%;
+    margin: rem(10px) 0;
+  }
 }
 .candy-bar__specs {
   display: flex;
+  @include tablets {
+    text-align: left;
+  }
 }
 .candy-bar__calorie {
   margin-right: rem(50px);
@@ -59,39 +100,34 @@
   font-weight: $boldFont;
 }
 .candy-bar__order{
-  display: flex;
-  align-items: center;
+  @include flex(space-between, center);
   margin-top: rem(20px);
+  max-width: 310px;
 }
 .candy-bar__price{
   font-size: rem(60px);
-  margin-right: rem(20px);
+  @include tablets {
+    margin-right: rem(40px);
+  }
 }
-.scroll-btn {
-  align-self: center;
+.candy-bar__btn{
+  display: flex;
+  align-items: center;
+  @include tablets {
+    height: 50%;
+  }
+}
+.scroll-btn {  
   outline: none;
+  padding: 0;  
 }
 .scroll-btn__img {
   width: 30px;
-  height: 40px;  
+  height: 15px;
 }
 .scroll-btn__img--back {
   transform: rotate(90deg);
 }
 .scroll-btn__img--forward {
   transform: rotate(-90deg) translate(15%);
-}
-@media (max-width: 768px) {
-  .candy-bar__item {
-    flex-direction: column;    
-  }
-  .candy-bar__img {
-    margin-right: 0;
-  }
-  .candy-bar__text {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
 }

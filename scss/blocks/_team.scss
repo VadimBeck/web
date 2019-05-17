@@ -8,78 +8,34 @@
     top: 100%;
     transform: translateY(-50%);
     z-index: 1;
+    @include tablets {
+      transform: scale(0.8) translateY(-65%);
+    }
+    @include phones {
+      transform: scale(0.6) translateY(-75%);
+    }
+    
   }
 }
 .team__list{
-  display: flex;
-  justify-content: center; 
-  align-items: flex-start;
-  flex-wrap: wrap; 
-  flex: 0.5;
+  @include flex(center,flex-start);    
   margin-left: rem(-15px);
+  @include tablets {
+    flex-wrap: wrap;
+    padding-bottom: rem(50px);
+  }
 }
 .team__item{
-  width: calc(100% / 4 - 15px);
-  min-width: 160px;
+  width: calc(100% / 4 - 15px);  
   margin-left: rem(15px);
   text-align: center;
-  
+  @include tablets {
+     width: calc(100% / 2 - 15px);
+  }
   &:nth-child(2n){
     margin-top: rem(50px);
-  }  
-}
-.member__img{
-  height: rem(280px);
-  margin-bottom: rem(20px);
-}
-.member__img-pic{
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.member__name {
-  cursor: pointer;
-  font-weight: $mediumFont;
-  font-size: rem(21px);
-
-  &:after {
-    content: "";
-    font-size: 0;
-    margin-left: 5px;
-    border: 8px solid transparent;
-    border-top-color: $green;
-    border-bottom-width: 0px;
-    border-left-width: 6px;
-    border-right-width: 6px;
-  }
-}
-.member__desc{
-  font-weight: $lightFont;
-  color: $garkGrey;
-  margin-top: rem(5px);
-  line-height: 1.2;
-}
-
-.member__text{
-  opacity: 0;  
-  overflow: hidden;  
-}
-.member--active .member__text {  
-  opacity: 1;
-  transition: all ease .3s;
-}
-.member--active .member__name::after {
-  border-bottom-color: $green;
-  display: inline-block;
-  transform: rotate(180deg);
-}
-@media (max-width: 768px) {
-  
-  .team__item {
-    width: calc(100% / 2 - 15px);
-
-    &:nth-child(2n) {
+    @include tablets {
       margin-top: 0;
     } 
-  }
+  }  
 }

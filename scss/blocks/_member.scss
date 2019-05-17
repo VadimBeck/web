@@ -1,0 +1,52 @@
+.member__img{
+  overflow: hidden;
+  margin-bottom: rem(15px);
+}
+.member__img-pic{
+  max-width: 100%;
+  object-fit: cover; 
+}
+.member__name {
+  cursor: pointer;
+  font-weight: $mediumFont;
+  font-size: rem(21px);
+  
+  &:after {
+    content: "";
+    font-size: 0;
+    margin-left: 5px;
+    border: 8px solid transparent;
+    border-top-color: $green;
+    border-bottom-width: 0px;
+    border-left-width: 6px;
+    border-right-width: 6px;
+  }
+}
+.member__desc{
+  font-weight: $lightFont;
+  color: $garkGrey;
+  line-height: 1.2;
+  @include tablets {
+    font-size: 0;
+  }
+}
+.member__text{
+  opacity: 0;  
+  overflow: hidden;
+  @include phones-small {
+    line-height: 1;
+  }
+}
+
+.member.is-active .member__text {  
+  opacity: 1;
+  transition: all ease .3s;
+}
+.member.is-active .member__name::after {
+  border-bottom-color: $green;
+  display: inline-block;
+  transform: rotate(180deg);
+}
+.member.is-active .member__desc{
+  font-size: 1rem;
+}  

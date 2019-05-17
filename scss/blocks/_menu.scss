@@ -3,20 +3,25 @@
   background: url(../img/menu/menu_bg.jpg) center center / cover no-repeat;
   flex-direction: row;
   justify-content: space-between;
+  position: relative;
 }
-.menu__list{
+.menu__accordeon{
   display: flex;
+  position: absolute;
+  height: 100%;
+  right: 0;
 }
 .menu__item {
   display: flex;
   overflow: hidden;
 }
 .menu__block {
-  display: flex;
+  @include flex(flex-end,flex-end);
   width: rem(100px);
-  justify-content: flex-end;
-  align-items: flex-end;
   cursor: pointer;
+  @include phones {
+    width: rem(70px);
+  }
 }
 .menu__subtitle {
   font-size: rem(48px);
@@ -25,6 +30,10 @@
   transform: rotate(-90deg) translate(100%);
   white-space: nowrap;  
   line-height: rem(100px);
+  @include phones {
+    font-size: rem(36px);
+    line-height: rem(70px);
+  }
 }
 .menu-milk{
   background: url(../img/menu/milk.jpg) center center / cover no-repeat;
@@ -40,10 +49,13 @@
   color: transparent;
   font-size: rem(16px);
   background-color:rgba(0, 0, 0, 0.7);
-  transition: all ease 0.4s;
+  //transition: all ease 0.4s;
 }
-.menu__item--active .menu__desc{
-  width: 40vw;
+.menu__item.is-active .menu__desc {  
+  width: 500px;
   color: #fff;
   padding: rem(50px) rem(30px);
+  @include tablets {
+    width: initial;
+  }
 }

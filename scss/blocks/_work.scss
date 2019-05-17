@@ -9,9 +9,13 @@
     position: absolute;
     z-index: 0;
     bottom: 5%;
-    width: 80%;
+    width: 100%;
+    max-width: 1000px;
     height: 80%;
     background: url(../img/work/video_leafs.png) center center / contain no-repeat;
+    @include tablets {
+      width: 100%;
+    }
   }
 
   &::after {
@@ -19,28 +23,45 @@
     position: absolute;
     right: 0;
     bottom: 0;
-    transform: translateY(50%);
+    transform: translateY(45%);
     z-index: 1;
+    @include tablets {
+      content: url(../img/work/black2.png);
+    }
+    @include phones-small {
+      display: none;
+    }
+  }
+}
+.work__container {
+  @include tablets {
+  max-width: 590px;
   }
 }
 .work__content {
   position: relative;
+  align-self: center;
   z-index: 1;
   width: 70%;
-  align-self: center;
+  margin-top: rem(40px);
+  @include tablets {
+    width: 80%;
+  }
 }
 .work__video {  
   max-width: 100%;
 }
 .work__btn{
   position: absolute;
-  width: 50%;
+  width: 40%;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
   outline: none;
+  @include tablets {
+    max-width: 180px;
+  }
 }
 .work__btn-img{
-  max-width: 100%;
-  max-height: 100%;
+  width: 100%;
 }

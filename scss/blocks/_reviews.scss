@@ -6,22 +6,35 @@
   &::before{
     content: url(../img/reviews/strawberry.png);
     position: absolute;
-    right: 1%;
-    top: 3%;
-    z-index: 1;   
+    right: 0;
+    top: 2%;
+    z-index: 1;
+    @include tablets {
+      content: url(../img/reviews/strawberry2.png);
+    }   
   }
   &::after{
-    content: url(../img/reviews/leaf_3.png);
+    content: ""; 
+    background: url(../img/reviews/leaf_3.png) left center / contain no-repeat;
     position: absolute;
+    width: 20%;
+    max-width: 160px;
+    height: 60%;
     top: 100%;
     left: 0;
-    transform: translateY(-53%);
+    transform: translateY(-55%);
     z-index: 1;
+    @include tablets {
+      background-position: left -30px center;
+    }
   }
 }
 .reviews__list{
-  @include flex;
-  margin-bottom: 40px;
+  @include flex(center,center);
+  flex: 0.4;
+  @include tablets {
+    flex: 0.7;
+  }
 }
 .reviews__item{
   display: flex;
@@ -35,10 +48,15 @@
   background-position: right top;
   background-repeat: no-repeat;
 
-  &--active{
+  &.is-active{
     width: 100%;
-    padding: 2.5rem;
+    padding: rem(45px);
     font-size: inherit;
+    @include tablets {
+      flex-direction: column;
+      align-items: center;
+      padding: rem(60px) rem(30px) rem(20px);
+    }
   }
   &::after {
     content: "";
@@ -50,13 +68,19 @@
     height: 45px;
     background: #fff;
     border-radius:  0 0 45px 45px;
+    @include tablets {
+      right: 40%;
+    }
   }
-
 }
 .reviews__img{
   width: 30%;
   margin-right: 20px;
   overflow: hidden;
+  @include tablets {
+    width: 50%;
+    margin-right: 0;
+  }
 }
 .reviews__img-pic{
   max-width: 100%;
@@ -65,16 +89,22 @@
 .reviews__text {
   width: 55%;
   color: $garkGrey;
-  padding: 1.5rem 0;
+  padding: rem(15px) 0;
   display: flex;
   flex-direction: column;
+  @include tablets {
+    width: 100%;
+    text-align: center;
+    align-items: center;
+  }
 }
 .reviews__text h3 {
   color: #000;
   font-size: rem(30px);  
   font-weight: $mediumFont;
-  line-height: 1;
+  line-height: 1.2;
   margin-bottom: 1rem;
+  max-width: 80%;
 }
 .reviews__text p{
   margin-bottom: rem(10px);
@@ -82,43 +112,34 @@
 .reviews__text span{
   font-weight: $mediumFont;
   margin-top: auto;
+  @include tablets {
+    margin-top: rem(20px);
+  }
 }
 
 .reviews__pix{
-  @include flex;
+  @include flex(center,center);
   align-self: center;  
 }
 .reviews__pix-item{
-  max-width: 94px;
-  max-height: 94px;
+  width: rem(94px);
+  height:  rem(94px);
+  box-sizing: content-box;
   overflow: hidden;
   border-radius: 50%;
-  margin:  0 20px;
+  margin:  10px;
   cursor: pointer;
-  box-shadow: 0 0 0 8px transparent;
-  
-  &--active{
-    box-shadow: 0 0 0 8px $green;
+  border: 8px solid transparent;
+  @include tablets {
+    width: rem(84px);
+    height: rem(84px);
+  }  
+  &.is-active{
+    border-color: $green;
     background-color: $green;
   }
 }
 .reviews__pix-img{
   max-width: 100%;
-  max-height: 100%;
   object-fit: cover;
-}
-
-@media (max-width: 768px) {
-  .reviews__item--active {
-    flex-direction: column;
-    align-items: center;
-  }
-  .reviews__img {
-    width: 50%;
-    margin-right: 0;
-  }
-  .reviews__text {
-    width: 90%;
-    text-align: center;
-  }
 }

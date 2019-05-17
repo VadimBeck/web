@@ -1,33 +1,60 @@
 .reasons{
-  @include flex;
-  background: url(../img/reasons/leaf.png) left center / no-repeat;
+  @include flex(center,center);
+  background: url(../img/reasons/leaf.png) left 200px / 180px  no-repeat;
   position: relative;
-  justify-content: center;
+  @include tablets {
+    background-size: rem(120px);
+  }
 
   &::after{
-    content: url(../img/reasons/malina_bar.png);
+    content: "";
     position: absolute;
+    background: url(../img/reasons/malina_bar.png) left center / contain no-repeat;    
+    width: 20%;
+    height: 40%;
+    max-width: 165px;
     left: 0;
     top: 100%;
     transform: translateY(-50%);
     z-index: 1;
+    @include tablets {
+      transform: translateY(-60%);
+    }
   }
 }
 .reasons__text{
   text-align: center;
   margin-bottom: rem(50px);
   line-height: 1.2;
+  @include tablets {
+    margin-bottom: rem(10px);
+  }
 }
-
+.reasons__desc{
+  max-width: rem(420px);
+}
 .reasons__list{  
   display: flex;  
   justify-content: space-between;
   margin-bottom: rem(20px);
+  @include tablets {
+    flex: 0.8;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+  }
 }
 .reasons__item{
   text-align: center;  
-  width: 30%;
   position: relative;
+  max-width: 30%;
+  @include tablets {
+    max-width: 60%;
+    margin-bottom: rem(10px);
+  }
+  @include phones {
+    max-width: 70%;    
+  }
 
   &::before {
     content: "";
@@ -39,54 +66,12 @@
     top: 55px;
     transform: translate(50%, 0);
     background: url(../img/reasons/middle.png) center center / contain no-repeat;
+    @include tablets {
+      display: none;
+    }
   }
 
   &:first-child::before{
     display: none;
-  }
-}
-
-.benefit__img {
-  margin-bottom: rem(30px); 
-}
-.benefit__img-wrap{
-  width: rem(125px);
-  height: rem(125px);
-  margin: 0 auto;  
-  background-color: $grey;
-  border-radius: 50%;
-  @include flex;
-}
-.benefit__img-pic{
-  max-width: 60%;
-  max-height: 60%;
-}
-.benefit__title{
-  font-weight: $boldFont;
-  font-size: rem(27px);
-  margin-bottom: rem(16px);
-}
-.benefit__desc{
-  color: $garkGrey;
-  line-height: 1.2;
-}
-
-@media (max-width: 768px) {
-  .reasons__list {
-    flex-direction: column;
-    align-items: center;
-  }
-  .reasons__item {
-    width: 60%;
-
-    &::before {
-      display: none;
-    }
-  }
-  .benefit__img {
-    margin-bottom: 0;
-  }
-  .reasons__text{
-    margin-bottom: 0;
   }
 }

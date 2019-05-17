@@ -10,10 +10,10 @@ function activate(arr,str) {
   } 
 }
 let menuList = document.getElementsByClassName('menu__item');
-activate(menuList, 'menu__item--active');
+activate(menuList, 'is-active');
 
 let teamList = document.getElementsByClassName('member');
-activate(teamList, 'member--active');
+activate(teamList, 'is-active');
 
 let revList = document.getElementsByClassName('reviews__item');
 let pixList = document.getElementsByClassName('reviews__pix-item');
@@ -22,10 +22,10 @@ let pixList = document.getElementsByClassName('reviews__pix-item');
   for (let i = 0; i < pixList.length; i++) {          
     pixList[i].onclick = function () {
       if (i!==count){
-        pixList[count].classList.remove('reviews__pix-item--active');
-        revList[count].classList.remove('reviews__item--active');
-        pixList[i].classList.add('reviews__pix-item--active');
-        revList[i].classList.add('reviews__item--active');
+        pixList[count].classList.remove('is-active');
+        revList[count].classList.remove('is-active');
+        pixList[i].classList.add('is-active');
+        revList[i].classList.add('is-active');
         count = i;
       }
   }

@@ -1,0 +1,35 @@
+.benefit__img {
+  margin-bottom: rem(30px);
+  @include tablets {
+    margin-bottom: 0;
+  }
+}
+.benefit__img-wrap {
+  width: rem(125px);
+  height: rem(125px);
+  margin: 0 auto;  
+  background-color: $grey;
+  border-radius: 50%;
+  @include flex(center,center);
+  @include phones {
+    width: rem(100px);
+    height: rem(100px);
+  }
+}
+.benefit__img-pic{
+  max-width: 60%;
+  max-height: 60%;
+}
+.benefit__title{
+  font-weight: $boldFont;
+  font-size: rem(27px);
+  margin-bottom: rem(16px);
+  @include tablets {
+    margin-bottom: 0;
+  }
+}
+.benefit__desc{
+  color: $garkGrey;
+  line-height: 1.2; 
+}
+
