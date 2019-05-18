@@ -6,8 +6,7 @@
 
   &:before {
     content: "";
-    position: absolute;
-    z-index: 0;
+    position: absolute;    
     bottom: 5%;
     width: 100%;
     max-width: 1000px;
@@ -17,20 +16,17 @@
       width: 100%;
     }
   }
-
   &::after {
-    content: url(../img/work/black.png);
+    content: "";
+    background: url(../img/work/black.png) right center / contain no-repeat;
     position: absolute;
+    width: 15%;
+    max-width: 195px;
+    height: 40%;
     right: 0;
     bottom: 0;
     transform: translateY(45%);
     z-index: 1;
-    @include tablets {
-      content: url(../img/work/black2.png);
-    }
-    @include phones-small {
-      display: none;
-    }
   }
 }
 .work__container {
@@ -51,7 +47,7 @@
 .work__video {  
   max-width: 100%;
 }
-.work__btn{
+.work__btn {
   position: absolute;
   width: 40%;
   left: 50%;
@@ -62,6 +58,6 @@
     max-width: 180px;
   }
 }
-.work__btn-img{
+.work__btn-img {
   width: 100%;
 }

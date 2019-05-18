@@ -16,11 +16,11 @@
     height: rem(100px);
   }
 }
-.benefit__img-pic{
+.benefit__img-pic {
   max-width: 60%;
   max-height: 60%;
 }
-.benefit__title{
+.benefit__title {
   font-weight: $boldFont;
   font-size: rem(27px);
   margin-bottom: rem(16px);
@@ -28,8 +28,8 @@
     margin-bottom: 0;
   }
 }
-.benefit__desc{
-  color: $garkGrey;
+.benefit__desc {
+  color: $darkGrey;
   line-height: 1.2; 
 }
 

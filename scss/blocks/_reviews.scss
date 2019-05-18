@@ -1,54 +1,60 @@
-.reviews{  
+.reviews {  
   position: relative;
   justify-content: center;  
   align-items: center;
 
-  &::before{
-    content: url(../img/reviews/strawberry.png);
-    position: absolute;
-    right: 0;
-    top: 2%;
-    z-index: 1;
-    @include tablets {
-      content: url(../img/reviews/strawberry2.png);
-    }   
-  }
-  &::after{
-    content: ""; 
-    background: url(../img/reviews/leaf_3.png) left center / contain no-repeat;
+  &::before, &::after {
+    content: "";
     position: absolute;
     width: 20%;
+    z-index: 1;
+  }
+  &::before {
+    background: url(../img/reviews/strawberry.png) right top / contain no-repeat;
+    max-width: 170px;
+    height: 20%;
+    right: 0;
+    top: 2%;
+    @include tablets {
+      background-image: url(../img/reviews/strawberry2.png);
+      background-size: 75%;
+    }
+  }
+  &::after {
+    background: url(../img/reviews/leaf_3.png) left center / contain no-repeat;  
+    width: 18%;
     max-width: 160px;
     height: 60%;
     top: 100%;
     left: 0;
     transform: translateY(-55%);
-    z-index: 1;
     @include tablets {
-      background-position: left -30px center;
+      background-position: left -5vw center;
     }
   }
 }
-.reviews__list{
+.reviews__list {
   @include flex(center,center);
-  flex: 0.4;
+  margin: rem(40px) 0;
   @include tablets {
-    flex: 0.7;
+    flex: 0.8;
+  }
+  @include phones {
+    margin: rem(10px) 0;
   }
 }
-.reviews__item{
+.reviews__item {
   display: flex;
   width: 0;
   font-size: 0px;
   line-height: 1.2;
   overflow: hidden;
-  background-color: $lightGrey;
   position: relative;
-  background-image: url(../../img/reviews/malina_leaf.png);
-  background-position: right top;
-  background-repeat: no-repeat;
-
-  &.is-active{
+  background: url(../../img/reviews/malina_leaf.png) right top / no-repeat, $lightGrey;
+  @include tablets {
+    background-size: 25%;
+  }
+  &.is-active {
     width: 100%;
     padding: rem(45px);
     font-size: inherit;
@@ -73,9 +79,9 @@
     }
   }
 }
-.reviews__img{
+.reviews__img {
   width: 30%;
-  margin-right: 20px;
+  margin-right: rem(20px);
   overflow: hidden;
   @include tablets {
     width: 50%;
@@ -88,7 +94,7 @@
 }
 .reviews__text {
   width: 55%;
-  color: $garkGrey;
+  color: $darkGrey;
   padding: rem(15px) 0;
   display: flex;
   flex-direction: column;
@@ -116,10 +122,9 @@
     margin-top: rem(20px);
   }
 }
-
 .reviews__pix{
   @include flex(center,center);
-  align-self: center;  
+  align-self: center;
 }
 .reviews__pix-item{
   width: rem(94px);
@@ -127,9 +132,9 @@
   box-sizing: content-box;
   overflow: hidden;
   border-radius: 50%;
-  margin:  10px;
+  margin: 0 10px;
   cursor: pointer;
-  border: 8px solid transparent;
+  border: rem(8px) solid transparent;
   @include tablets {
     width: rem(84px);
     height: rem(84px);

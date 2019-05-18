@@ -9,7 +9,7 @@
     font-size: rem(40px);
   }
 }
-.intro__title{   
+.intro__title {   
   font-size: rem(60px);
   line-height: 1;
   text-align: left;
@@ -33,7 +33,7 @@
     font-size: rem(30px);
   }
 }
-.team__title{
+.team__title {
   margin-bottom: rem(60px);
   @include tablets {  
     margin-bottom: rem(40px);
@@ -42,7 +42,7 @@
     margin-bottom: rem(12px);
   }
 }
-.menu__title{
+.menu__title {
   margin-top: rem(100px);
   margin-left: rem(80px);
   @include tablets {  

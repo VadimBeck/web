@@ -1,7 +1,7 @@
-.team{
+.team {
   position: relative;
 
-  &::after{
+  &::after {
     content: url(../img/team/malina.png);
     position: absolute;
     left: 3%;
@@ -13,11 +13,10 @@
     }
     @include phones {
       transform: scale(0.6) translateY(-75%);
-    }
-    
+    }    
   }
 }
-.team__list{
+.team__list {
   @include flex(center,flex-start);    
   margin-left: rem(-15px);
   @include tablets {
@@ -25,10 +24,11 @@
     padding-bottom: rem(50px);
   }
 }
-.team__item{
+.team__item {
   width: calc(100% / 4 - 15px);  
   margin-left: rem(15px);
   text-align: center;
+  position: relative;
   @include tablets {
      width: calc(100% / 2 - 15px);
   }

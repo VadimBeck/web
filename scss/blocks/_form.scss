@@ -1,28 +1,26 @@
-.form{
+.form {
   background: url(../img/form/form_bg.jpg) center center / cover no-repeat;
   align-items: center;
   justify-content: center;
   color: $green;
   position: relative;
 
-  &::before{    
-    content: url(../img/form/form_left.png);
+  &::before, &::after {
     position: absolute;
-    left: 1%;
-    bottom: rem(50px);
     @include tablets {
       display: none;
     }
   }
-  
-  &::after{
+  &::before {    
+    content: url(../img/form/form_left.png);
+    left: 1%;
+    bottom: rem(50px);    
+  }  
+  &::after {
     content: url(../img/form/form_right.png);
     position: absolute;
     right: 4px;
     bottom: rem(30px);
-    @include tablets {
-      display: none;
-    }
   }
 }
 .form__wrapper {
@@ -37,12 +35,12 @@
     margin-top: 0;
   }
 }
-.form__block{
+.form__block {
   width: 100%;
   margin-left: rem(20px);
   margin-bottom: rem(10px);
 }
-.form__column{
+.form__column {
   flex: 1 0 300px;
   display: flex;
   flex-wrap: wrap;
@@ -53,12 +51,12 @@
     margin-bottom: 0;
   }  
 }
-.form__row{
+.form__row {
  display: flex;
  width: 100%;
  margin-left: rem(-20px);
 }
-.form-entry{
+.form-entry {
   font-family: 'OpenSans', Arial, sans-serif;
   width: 100%;
   padding: rem(18px) rem(10px);
@@ -67,10 +65,10 @@
   outline: none;
   margin-top: rem(5px);
 
-  &--center{
+  &--center {
     text-align: center;
   }
-  &:focus{
+  &:focus {
     border-color: $yellow;
   }
 }
@@ -100,30 +98,28 @@
   display: inline-block;
   margin: 0 rem(20px);
 
-  &::before {
+  &::before, &::after {
     content: "";
     display: block;
     position: absolute;
+    border-radius: 50%;
+  }
+  &::before {    
     width: rem(24px);
     height: rem(24px);
     background-color: #fff;
-    border-radius: 50%;
     top: 0;
     left: 0;
   }
-  &::after{
-    content: "";
-  display: block;
-  position: absolute;
-  width: rem(14px);
-  height: rem(14px);
-  border-radius: 50%;  
-  top: rem(12px);
-  left: rem(12px);
-  transform: translate(-50%,-50%)
+  &::after {
+    width: rem(14px);
+    height: rem(14px);
+    top: rem(12px);
+    left: rem(12px);
+    transform: translate(-50%,-50%);
   }  
 }
-.form__radio-btn:checked ~ .form__radio-text::after{
+.form__radio-btn:checked ~ .form__radio-text::after {
   background-color: $green;
 }
 .form__check {
@@ -136,10 +132,12 @@
 .form__check-text {
   margin-left: rem(20px);
 
-  &::before {
+  &::before, &::after {
     content: "";
     display: block;
     position: absolute;
+  }
+  &::before {    
     width: rem(24px);
     height: rem(24px);
     background-color: #fff;
@@ -147,9 +145,6 @@
     left: 0;
   }
   &::after {
-    content: "";
-    display: block;
-    position: absolute;
     left: rem(8px);
     top: rem(4px);
     height: rem(8px);
@@ -171,7 +166,7 @@
 }
 .form__controls {
   @include tablets {
-    margin: rem(40px) auto rem(40px);
+    margin: rem(40px) auto;
     @include flex(space-evenly,center);
     flex-direction: column;
   }

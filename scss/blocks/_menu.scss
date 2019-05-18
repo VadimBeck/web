@@ -1,11 +1,11 @@
-.menu{
+.menu {
   color: #fff;
   background: url(../img/menu/menu_bg.jpg) center center / cover no-repeat;
   flex-direction: row;
   justify-content: space-between;
   position: relative;
 }
-.menu__accordeon{
+.menu__accordeon {
   display: flex;
   position: absolute;
   height: 100%;
@@ -20,7 +20,7 @@
   width: rem(100px);
   cursor: pointer;
   @include phones {
-    width: rem(70px);
+    width: rem(80px);
   }
 }
 .menu__subtitle {
@@ -32,28 +32,25 @@
   line-height: rem(100px);
   @include phones {
     font-size: rem(36px);
-    line-height: rem(70px);
+    line-height: rem(80px);
   }
 }
-.menu-milk{
+.menu-milk {
   background: url(../img/menu/milk.jpg) center center / cover no-repeat;
 }
-.menu-fruit{
+.menu-fruit {
   background: url(../img/menu/fruit.jpg) center center / cover no-repeat;
 }
-.menu-berry{
+.menu-berry {
   background: url(../img/menu/berry.jpg) center center / cover no-repeat;
 }
 .menu__desc {
   width: 0;
-  color: transparent;
   font-size: rem(16px);
   background-color:rgba(0, 0, 0, 0.7);
-  //transition: all ease 0.4s;
 }
 .menu__item.is-active .menu__desc {  
   width: 500px;
-  color: #fff;
   padding: rem(50px) rem(30px);
   @include tablets {
     width: initial;

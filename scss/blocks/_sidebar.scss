@@ -6,13 +6,12 @@
 .listing {
   position: fixed;
   top: 20%;
-  right: 45px;
+  right: rem(45px);
   z-index: 2;
 }
-
 .listing__item {  
-  width: 16px;
-  height: 16px;
+  width: rem(16px);
+  height: rem(16px);
   border-radius: 50%;
   border: 1px solid transparent;
   margin-bottom: 5px;
@@ -26,9 +25,9 @@
 .listing__link {  
   display: block;
   width: 100%;
-  height: 100%;  
+  height: 100%;
 
-  &::before{
+  &::before {
     content: "";
     display: block;
     position: absolute;

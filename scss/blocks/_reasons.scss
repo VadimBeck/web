@@ -1,12 +1,11 @@
-.reasons{
+.reasons {
   @include flex(center,center);
-  background: url(../img/reasons/leaf.png) left 200px / 180px  no-repeat;
+  background: url(../img/reasons/leaf.png) left 200px / 15%  no-repeat;
   position: relative;
   @include tablets {
-    background-size: rem(120px);
+    background-size: 25%;
   }
-
-  &::after{
+  &::after {
     content: "";
     position: absolute;
     background: url(../img/reasons/malina_bar.png) left center / contain no-repeat;    
@@ -22,7 +21,7 @@
     }
   }
 }
-.reasons__text{
+.reasons__text {
   text-align: center;
   margin-bottom: rem(50px);
   line-height: 1.2;
@@ -30,21 +29,21 @@
     margin-bottom: rem(10px);
   }
 }
-.reasons__desc{
+.reasons__desc {
   max-width: rem(420px);
 }
-.reasons__list{  
+.reasons__list {  
   display: flex;  
   justify-content: space-between;
   margin-bottom: rem(20px);
   @include tablets {
-    flex: 0.8;
+    flex: 0.9;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
   }
 }
-.reasons__item{
+.reasons__item {
   text-align: center;  
   position: relative;
   max-width: 30%;
@@ -55,7 +54,6 @@
   @include phones {
     max-width: 70%;    
   }
-
   &::before {
     content: "";
     position: absolute;
@@ -70,7 +68,6 @@
       display: none;
     }
   }
-
   &:first-child::before{
     display: none;
   }
