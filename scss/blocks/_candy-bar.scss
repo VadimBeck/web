@@ -41,6 +41,9 @@
 .candy-bar__list {
   display: flex;
   transition: transform .7s ease-in-out;
+  @include tablets{
+    transition-duration: 0.4s;
+  }
 }
 .candy-bar__item {
   @include flex(space-between,center);
@@ -127,7 +130,6 @@
   width: 30px;
   height: 30px;
   outline: none;
-  padding: 0;
 }
 .scroll-btn--back {
   transform: rotate(90deg);

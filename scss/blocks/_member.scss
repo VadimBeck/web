@@ -1,6 +1,7 @@
 .member__img {
   overflow: hidden;
   margin-bottom: rem(15px);
+  width: 100%;
   height: rem(285px);
 }
 .member__img-pic {
@@ -14,7 +15,7 @@
   font-weight: $mediumFont;
   font-size: rem(21px);
   
-  &:after {
+  &::after {
     content: "";
     font-size: 0;
     margin-left: 5px;
@@ -46,15 +47,14 @@
 }
 .member {  
   &.is-active .member__text {  
-    opacity: 1;
-    transition: height ease .3s;
+    opacity: 1;    
   }
-  .member.is-active .member__name::after {
+  &.is-active .member__name::after {
     border-bottom-color: $green;
     display: inline-block;
     transform: rotate(180deg);
   }
-  &.member.is-active .member__desc {
+  &.is-active .member__desc {
     font-size: 1rem;
   }  
 }
