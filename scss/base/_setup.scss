@@ -40,10 +40,9 @@ body {
   width: 96%;
   max-width: 940px;
   height: 100%;
-  display: flex;
+  @include flex(center,center);
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  overflow: hidden;
 
   @include tablets {
     max-width: 460px; 

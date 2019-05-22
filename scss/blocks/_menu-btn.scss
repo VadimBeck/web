@@ -1,11 +1,11 @@
 .menu-btn {
-  position: absolute;
-  display: inline-block;  
+  position: relative; 
+  display: none;
   overflow: hidden;
   outline: none;
   padding: 0;
   @include tablets {
-    position: relative;
+    display: block;
     width: 24px;
     height: 24px;
   }
