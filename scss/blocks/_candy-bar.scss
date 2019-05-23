@@ -25,24 +25,25 @@
 .candy-bar__container {
   max-width: 1000px;
   @include tablets {
-    max-width: 460px; 
+    max-width: 480px; 
   }
 }
-.candy-bar__slider {
+.candy-bar__wrapper {
   @include flex(center,center);
   width: 100%;
 }
-.candy-bar__scroll {
+.candy-bar__slider {
   width: 100%;
   overflow: hidden;
   position: relative;
   z-index: 2;
+  margin: 0 10px;
 }
 .candy-bar__list {
   display: flex;
   transition: transform .7s ease-in-out;
   @include tablets{
-    transition-duration: 0.4s;
+    transition-duration: .4s;
   }
 }
 .candy-bar__item {
@@ -57,7 +58,7 @@
 .candy-bar__img {
   width: 50%;
   margin-right: 7%;
-  flex-shrink: 0;
+  flex-shrink: 0;  
   @include tablets {
     width: 93%;
   }

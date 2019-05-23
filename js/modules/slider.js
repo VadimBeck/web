@@ -1,17 +1,16 @@
 var d = document;
 var list = d.querySelector('.candy-bar__list');
-var items = d.getElementsByClassName('candy-bar__item');
 var itemCount = d.querySelectorAll('.candy-bar__item').length;
-var scroll = d.querySelector('.candy-bar__scroll');
+var slider = d.querySelector('.candy-bar__slider');
 var back = d.querySelector('#back');
 var forward = d.querySelector('#forward');
 var pos = 0;
-var clientX;
+var clientX, clientY;
 
 //Слайдер
 
 function setTransform() {
-  list.style.transform = 'translateX(' + (-pos * scroll.offsetWidth) + 'px)';
+  list.style.transform = 'translateX(' + (-pos * slider.offsetWidth) + 'px)';
 }
 
 function prev() {
@@ -27,18 +26,23 @@ back.addEventListener('click', prev);
 forward.addEventListener('click', next);
 window.addEventListener('resize', setTransform);
 
-//Обработка события Swipe
+//Обработка события
 
-scroll.addEventListener('touchstart', function(e) {  
-  clientX = e.touches[0].clientX;  
+slider.addEventListener('touchstart', function(e) {  
+  clientX = e.touches[0].clientX;
+  clientY = e.touches[0].clientY;
 }, false);
 
-scroll.addEventListener('touchend', function(e) {
-  let deltaX;
+slider.addEventListener('touchend', function(e) {
+  var deltaX, deltaY;
+  
+  deltaX = e.changedTouches[0].clientX - clientX;
+  deltaY = e.changedTouches[0].clientY - clientY;
+  var mod = Math.abs(deltaX) - Math.abs(deltaY);
 
-  deltaX = e.changedTouches[0].clientX - clientX;  
-
-  if (deltaX <0) { next();
-  } else { prev();
+  if (deltaX < 0 && mod > 0) {
+    next();
+  } else if (deltaX > 0 && mod > 0) {
+    prev();
   }   
 }, false);
