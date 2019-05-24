@@ -1,8 +1,5 @@
 html {
   font-size: 18px;
-  // @include phones {
-  //   font-size: 16px;
-  // }
   @include phones-small {
     font-size: 13px;
   }
@@ -15,13 +12,15 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: $regularFont;
-  line-height: 1.42; 
+  line-height: 1.42;
+  &.locked {
+    overflow: hidden;
+  }
 }
 .wrapper {
   min-height: 100%;
   display: flex;
-  flex-direction: column;
-  //overflow-y: hidden;
+  flex-direction: column;  
 }
 .section {
   height: 100vh;
