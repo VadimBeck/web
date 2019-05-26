@@ -14,19 +14,3 @@ activate(menuList, 'is-active');
 
 let teamList = document.getElementsByClassName('member');
 activate(teamList, 'is-active');
-
-let revList = document.getElementsByClassName('reviews__item');
-let pixList = document.getElementsByClassName('reviews__pix-item');
-
- let count = 0;  
-  for (let i = 0; i < pixList.length; i++) {          
-    pixList[i].onclick = function () {
-      if (i!==count){
-        pixList[count].classList.remove('is-active');
-        revList[count].classList.remove('is-active');
-        pixList[i].classList.add('is-active');
-        revList[i].classList.add('is-active');
-        count = i;
-      }
-  }
-}

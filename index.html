@@ -288,38 +288,40 @@
     <section class="section reviews">
       <div class="container">
         <h2 class="paige-title">Отзывы</h2>      
-        <ul class="reviews__list">
-          <li class="reviews__item is-active">
-            <div class="reviews__img">
-              <img src="./img/reviews/rev1.jpg" alt="" class="reviews__img-pic">
-            </div>
-            <article class="reviews__text">
-              <h3>Лучший перекус</h3>
-              <p>Я ем малыми порциями, но часто. Это повышает мою продуктивность в разы. В течении дня сижу за компьютером и часто отходить в кафе или на кухню просто не могу себе позволить. А батончик - он всегда под рукой. Это приятно и удобно.</p>
-              <span>Алена Хмельницкая</span>
-            </article>
-          </li>
-          <li class="reviews__item">
-            <div class="reviews__img">
-                <img src="./img/reviews/rev2.jpg" alt="" class="reviews__img-pic">
-            </div>
-            <article class="reviews__text">
-              <h3>Лучшие батончики премиум уровня</h3>
-              <p>Батончики понравились. На мой взгляд слегка завышена цена по сравнению  с конкурентами, однако, как говорится - оно того стоит. Нравится носить с собой, нравится держать в руке. Ну и конечно же, кушать. Идеально утоляют голод, хоть и не надолго. Через час уже ем еще один. Но это скорее плюс, чем минус.</p>
-              <span>Мария Орлова</span>
-            </article>
-          </li>
-          <li class="reviews__item">
-            <div class="reviews__img">
-              <img src="./img/reviews/rev3.jpg" alt="" class="reviews__img-pic">
-            </div>
-            <article class="reviews__text">
-              <h3>Идеально подходят для спортсменов</h3>
-              <p>После тренировок всегда хочется быстро закинуться чем-то белковым, потому что до дома еще нужно доехать. А кушать хочется. Протеиновые батончики всегда выручают в этом плане. Спасибо производителю за этот качественный и экологичный продукт.</p>
-              <span>Вадим Грачев</span>
-            </article>
-          </li>
-        </ul>
+        <div class="rewiews__wrapper">
+          <ul class="reviews__list">
+            <li class="reviews__item is-active">
+              <div class="reviews__img">
+                <img src="./img/reviews/rev1.jpg" alt="" class="reviews__img-pic">
+              </div>
+              <article class="reviews__text">
+                <h3>Лучший перекус</h3>
+                <p>Я ем малыми порциями, но часто. Это повышает мою продуктивность в разы. В течении дня сижу за компьютером и часто отходить в кафе или на кухню просто не могу себе позволить. А батончик - он всегда под рукой. Это приятно и удобно.</p>
+                <span>Алена Хмельницкая</span>
+              </article>
+            </li>
+            <li class="reviews__item">
+              <div class="reviews__img">
+                  <img src="./img/reviews/rev2.jpg" alt="" class="reviews__img-pic">
+              </div>
+              <article class="reviews__text">
+                <h3>Лучшие батончики премиум уровня</h3>
+                <p>Батончики понравились. На мой взгляд слегка завышена цена по сравнению  с конкурентами, однако, как говорится - оно того стоит. Нравится носить с собой, нравится держать в руке. Ну и конечно же, кушать. Идеально утоляют голод, хоть и не надолго. Через час уже ем еще один. Но это скорее плюс, чем минус.</p>
+                <span>Мария Орлова</span>
+              </article>
+            </li>
+            <li class="reviews__item">
+              <div class="reviews__img">
+                <img src="./img/reviews/rev3.jpg" alt="" class="reviews__img-pic">
+              </div>
+              <article class="reviews__text">
+                <h3>Идеально подходят для спортсменов</h3>
+                <p>После тренировок всегда хочется быстро закинуться чем-то белковым, потому что до дома еще нужно доехать. А кушать хочется. Протеиновые батончики всегда выручают в этом плане. Спасибо производителю за этот качественный и экологичный продукт.</p>
+                <span>Вадим Грачев</span>
+              </article>
+            </li>
+          </ul>
+        </div>
         <ul class="reviews__pix">
           <li class="reviews__pix-item is-active">
             <img src="./img/reviews/rev1.jpg" alt="" class="reviews__pix-img">
@@ -351,7 +353,7 @@
     </section>   
 
     <section class="section form">
-      <div class="container">
+      <div class="container form__container">
         <div class="form__wrapper">
           <form action="#" class="form__delivery">
             <h2 class="paige-title">Закажите&nbsp;доставку</h2>
@@ -360,11 +362,11 @@
                 <div class="form__row">
                   <label class="form__block">
                     <div class="form__sub">Имя</div>
-                    <input class="form__input form-entry" type="text">
+                    <input class="form__input form-entry" name="name" type="text">
                   </label>
                   <label class="form__block">
                     <div class="form__sub">Телефон</div>
-                    <input class="form__input form-entry" type="text" placeholder="89022348912">
+                    <input class="form__input form-entry" name="phone" type="text" placeholder="89022348912">
                   </label>
                 </div>
                 <div class="form__row">

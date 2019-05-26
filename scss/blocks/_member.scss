@@ -30,19 +30,23 @@
   font-weight: $lightFont;
   color: $darkGrey;
   line-height: 1.2;
-  z-index: 1;  
+  z-index: 1;
+
   @include tablets {
     position: absolute;    
     width: 100%;
     left: 0;
     background: $lightGrey;
     border-radius: 8px;
-    font-size: 0;
   }
 }
 .member__text {
+  transition: opacity .5s;
   opacity: 0;  
   overflow: hidden;
+  @include tablets {
+  transition: opacity 0s;
+  }  
   @include phones-small {
     line-height: 1;
   }
@@ -56,7 +60,4 @@
     display: inline-block;
     transform: rotate(180deg);
   }
-  &.is-active .member__desc {
-    font-size: 1rem;
-  }  
 }

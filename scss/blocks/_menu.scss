@@ -7,17 +7,36 @@
 }
 .menu__accordeon {
   display: flex;
+  justify-content: flex-end;
   position: absolute;
   height: 100%;
-  right: 0;
+  min-width: 100%;
+  overflow: hidden;
+  left: 0;
 }
 .menu__item {
   display: flex;
-  overflow: hidden;
+  transition: all .4s;
+  width: rem(100px);
+  @include phones {
+    width: rem(80px);
+    transition: 0s;
+  }
+  &.is-active{
+    width: 57%;
+   @include tablets {
+     flex: 1;
+   }
+   @include phones {
+     width: 100vw;
+     order: -1;
+   }
+ }
 }
 .menu__block {
   @include flex(flex-end,flex-end);
   width: rem(100px);
+  flex-shrink: 0;
   cursor: pointer;
   @include phones {
     width: rem(80px);
@@ -45,14 +64,21 @@
   background: url(../img/menu/berry.jpg) center center / cover no-repeat;
 }
 .menu__desc {
+  transition: width 1.6s;
   width: 0;
+  color: rgba(255,255,255,0);
   font-size: rem(16px);
   background-color:rgba(0, 0, 0, 0.7);
+  @include phones {
+    transition: 0s;
+  }
 }
-.menu__item.is-active .menu__desc {  
-  width: 500px;
+.menu__item.is-active .menu__desc {
+  transition: width 0.1s, color .4s .3s;  
+  color:rgba(255,255,255,1);
+  width: 100%;
   padding: rem(50px) rem(30px);
-  @include tablets {
-    width: initial;
+  @include phones {
+    transition: color .8s;
   }
 }

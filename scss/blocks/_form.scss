@@ -23,6 +23,11 @@
     bottom: rem(30px);
   }
 }
+.form__container {
+  @include tablets{
+    max-width: 470px;
+  }
+}
 .form__wrapper {
   @include flex(center,center); 
   font-weight: $mediumFont;
@@ -32,7 +37,7 @@
   flex-wrap: wrap;
   margin-top: rem(45px);
   @include phones {
-    margin-top: 0;
+    margin: 0 5px;
   }
 }
 .form__block {

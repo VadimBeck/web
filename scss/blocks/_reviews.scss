@@ -33,9 +33,17 @@
     }
   }
 }
+.rewiews__wrapper{
+  overflow: hidden;
+  width: 100%;
+}
 .reviews__list {
-  @include flex(center,center);
+  @include flex(flex-start,center);
   margin: rem(40px) 0;
+  position: relative;
+  left: 0;
+  top: 0;
+  transition: left ease-in-out .8s;
   @include tablets {
     flex: 0.8;
   }
@@ -45,25 +53,19 @@
 }
 .reviews__item {
   display: flex;
-  width: 0;
-  font-size: 0px;
+  width: 100%;
+  flex-shrink: 0;
+  padding: rem(45px);
   line-height: 1.2;
   overflow: hidden;
   position: relative;
   background: url(../../img/reviews/malina_leaf.png) right top / no-repeat, $lightGrey;
   @include tablets {
-    background-size: 25%;
-  }
-  &.is-active {
-    width: 100%;
-    padding: rem(45px);
-    font-size: inherit;
-    @include tablets {
       flex-direction: column;
       align-items: center;
+      background-size: 25%;
       padding: rem(60px) rem(30px) rem(20px);
     }
-  }
   &::after {
     content: "";
     position: absolute;
@@ -133,15 +135,15 @@
   overflow: hidden;
   border-radius: 50%;
   margin: 0 10px;
-  cursor: pointer;
-  border: rem(8px) solid transparent;
+  cursor: pointer;  
+  border: rem(8px) solid transparent;  
   @include tablets {
     width: rem(84px);
     height: rem(84px);
   }  
   &.is-active {
-    border-color: $green;
     background-color: $green;
+    transition: .2s;
   }
 }
 .reviews__pix-img {
