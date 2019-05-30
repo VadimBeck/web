@@ -169,6 +169,11 @@
     margin: 0 auto;   
   }
 }
+.form__reset {
+  color: inherit;
+  margin-left: rem(10px);
+}
+
 .form__controls {
   @include tablets {
     margin: rem(40px) auto;
@@ -178,4 +183,7 @@
   @include phones {
     margin: 0 auto rem(20px);
   }
+}
+.error {
+  color: #FF0000;
 }

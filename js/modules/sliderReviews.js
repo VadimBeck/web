@@ -4,7 +4,8 @@
   let active = 0;
 
   for (let i = 0; i < items.length; i++) {
-    items[i].addEventListener('click', function() {
+    items[i].addEventListener('click', function(e) {
+      e.preventDefault();
       list.style.left = -(i*100)+'%';
       items[i].classList.toggle('is-active');
       items[active].classList.toggle('is-active');

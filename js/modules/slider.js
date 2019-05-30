@@ -11,15 +11,24 @@
 //Слайдер
 
   function setTransform() {
-    list.style.transform = 'translateX(' + (-pos * slider.offsetWidth) + 'px)';
+    list.style.transform = 'translateX('+(-pos * slider.offsetWidth)+'px)';
   }
 
   function prev() {
-    pos = Math.max(pos - 1, 0);
+    if (pos == 0){
+     pos = itemCount - 1;
+    } else { 
+      pos--;
+    }
     setTransform();
   }
   function next() {
-    pos = Math.min(pos + 1, itemCount - 1);
+    if (pos == itemCount - 1){
+      pos = 0;
+    } else { 
+      pos++;
+    }
+     setTransform();
     setTransform();
   }
 
@@ -27,7 +36,7 @@
   forward.addEventListener('click', next);
   window.addEventListener('resize', setTransform);
 
-//Обработка события
+//Обработка события touch
 
   slider.addEventListener('touchstart', function(e) {  
     clientX = e.touches[0].clientX;

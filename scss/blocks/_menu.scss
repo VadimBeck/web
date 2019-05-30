@@ -37,7 +37,7 @@
   @include flex(flex-end,flex-end);
   width: rem(100px);
   flex-shrink: 0;
-  cursor: pointer;
+  //cursor: pointer;
   @include phones {
     width: rem(80px);
   }

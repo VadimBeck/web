@@ -6,15 +6,11 @@ const menu = (function() {
   let act = false;
 
   function toggleMenu() {
-    if (body.offsetWidth > 768) {
-      return
-    } else {
       button.classList.toggle('is-active');
       header.classList.toggle('is-active');
       body.classList.toggle('locked');
 
       act ? act = false : act = true;
-    }
   }
 
   let addListeners = function() {
@@ -22,7 +18,7 @@ const menu = (function() {
 
         nav.addEventListener('click', function(e){
           let target = e.target;
-          if (target.classList.contains('nav__link')) {
+          if (target.classList.contains('nav__link') && body.offsetWidth <= 768) {
             toggleMenu();
           }
         });
