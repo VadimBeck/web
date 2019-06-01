@@ -14,10 +14,10 @@
     list.style.transform = 'translateX('+(-pos * slider.offsetWidth)+'px)';
   }
 
-  function prev() {
+  function prev () {
     if (pos == 0){
      pos = itemCount - 1;
-    } else { 
+    } else {
       pos--;
     }
     setTransform();
@@ -28,12 +28,30 @@
     } else { 
       pos++;
     }
-     setTransform();
     setTransform();
   }
 
-  back.addEventListener('click', prev);
-  forward.addEventListener('click', next);
+  function throttle(func, ms) {
+    var stop = false;
+  
+    function wrap() {  
+      if (stop) {
+        return;
+      }
+  
+      func.apply(this, arguments);  
+      stop = true;  
+      setTimeout(function() {
+        stop = false;
+      }, ms);
+    }  
+    return wrap;
+  }
+  let trottlePrev = throttle(prev, 600);
+  let trottleNext = throttle(next, 600);
+
+  back.addEventListener('click', trottlePrev);
+  forward.addEventListener('click', trottleNext);
   window.addEventListener('resize', setTransform);
 
 //Обработка события touch
@@ -51,9 +69,9 @@
     var mod = Math.abs(deltaX) - Math.abs(deltaY);
 
     if (deltaX < 0 && mod > 0) {
-      next();
+      trottlenext();
     } else if (deltaX > 0 && mod > 0) {
-      prev();
+      trottlePrev();
     }   
   }, false);
 

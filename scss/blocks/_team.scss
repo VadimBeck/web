@@ -17,7 +17,7 @@
   }
 }
 .team__list {
-  @include flex(center,flex-start);    
+  @include flex(center,flex-start);
   margin-left: rem(-15px);
   @include tablets {
     flex-wrap: wrap;

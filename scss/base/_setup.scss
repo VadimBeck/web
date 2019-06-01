@@ -27,7 +27,6 @@ body {
   min-height: 650px;
   display: flex;
   justify-content: center;
-
   @include tablets {
     min-height: 850px;
   }

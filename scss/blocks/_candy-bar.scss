@@ -41,10 +41,7 @@
 }
 .candy-bar__list {
   display: flex;
-  transition: transform .7s ease-in-out;
-  @include tablets{
-    transition-duration: .4s;
-  }
+  transition: transform .6s ease-in-out;
 }
 .candy-bar__item {
   @include flex(space-between,center);

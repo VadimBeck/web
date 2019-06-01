@@ -12,9 +12,10 @@
   height: 100%;
   object-fit: cover; 
 }
-.member__name {
+.member__link {
   font-weight: $mediumFont;
   font-size: rem(21px);
+  display: block;
   
   &::after {
     content: "";
@@ -23,6 +24,7 @@
     border: 8px solid transparent;
     border-top-color: $green;
     border-width: 8px 6px 0px;
+    transition: all .3s;
   }
 }
 .member__desc {
@@ -30,31 +32,30 @@
   color: $darkGrey;
   line-height: 1.2;
   z-index: 1;
-
-  @include tablets {
-    position: absolute;    
-    width: 100%;
-    left: 0;
-    background: $lightGrey;
-    border-radius: 8px;
-  }
 }
 .member__text {
-  transition: opacity .5s;
   opacity: 0;  
-  overflow: hidden;
+  transition: height .4s;
+  overflow: hidden;  
+  position: absolute; 
+  width: 100%;
+  left: 0;
+  height: 0;  
   @include tablets {
-  transition: opacity 0s;
-  }  
+    padding-top: 20px;
+    position: static;     
+  }
   @include phones-small {
     line-height: 1;
   }
 }
-.member {  
-  &.is-active .member__text {  
-    opacity: 1;    
+.member {
+  &.is-active .member__text {
+    opacity: 1;
+    padding-top: 0;
+    margin-bottom: rem(10px);
   }
-  &.is-active .member__name::after {
+  &.is-active .member__link::after {
     border-bottom-color: $green;
     display: inline-block;
     transform: rotate(180deg);

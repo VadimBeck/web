@@ -1,43 +1,31 @@
 .menu {
   color: #fff;
   background: url(../img/menu/menu_bg.jpg) center center / cover no-repeat;
-  flex-direction: row;
-  justify-content: space-between;
+  justify-content: flex-start;
   position: relative;
 }
 .menu__accordeon {
   display: flex;
   justify-content: flex-end;
   position: absolute;
-  height: 100%;
-  min-width: 100%;
   overflow: hidden;
+  height: 100%;
+  width: 100%;
   left: 0;
 }
 .menu__item {
   display: flex;
-  transition: all .4s;
-  width: rem(100px);
-  @include phones {
-    width: rem(80px);
-    transition: 0s;
+  &.is-active {   
+    @include phones {
+      flex-shrink: 0;
+      order: 1;
+      width: 100vw;
+    }
   }
-  &.is-active{
-    width: 57%;
-   @include tablets {
-     flex: 1;
-   }
-   @include phones {
-     width: 100vw;
-     order: -1;
-   }
- }
 }
 .menu__block {
   @include flex(flex-end,flex-end);
   width: rem(100px);
-  flex-shrink: 0;
-  //cursor: pointer;
   @include phones {
     width: rem(80px);
   }
@@ -63,22 +51,26 @@
 .menu-berry {
   background: url(../img/menu/berry.jpg) center center / cover no-repeat;
 }
-.menu__desc {
-  transition: width 1.6s;
+.menu__desc {  
   width: 0;
-  color: rgba(255,255,255,0);
+  overflow: hidden;
+  transition: all .6s;  
   font-size: rem(16px);
   background-color:rgba(0, 0, 0, 0.7);
   @include phones {
     transition: 0s;
-  }
+  } 
 }
-.menu__item.is-active .menu__desc {
-  transition: width 0.1s, color .4s .3s;  
-  color:rgba(255,255,255,1);
-  width: 100%;
+.menu__text{
+  opacity: 0;
+}
+.menu__item.is-active .menu__desc {  
   padding: rem(50px) rem(30px);
   @include phones {
-    transition: color .8s;
+    width: 100% !important;
   }
+}
+.menu__item.is-active .menu__text {  
+  opacity: 1;
+  transition: opacity .5s .5s;
 }
