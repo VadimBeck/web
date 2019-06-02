@@ -28,11 +28,8 @@ const menu = (function() {
           toggleMenu();
         }
       })
-
   return {
     menuOver: addListeners  
   }
-
 }());
-
 menu.menuOver();

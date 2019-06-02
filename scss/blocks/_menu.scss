@@ -66,9 +66,6 @@
 }
 .menu__item.is-active .menu__desc {  
   padding: rem(50px) rem(30px);
-  @include phones {
-    width: 100% !important;
-  }
 }
 .menu__item.is-active .menu__text {  
   opacity: 1;

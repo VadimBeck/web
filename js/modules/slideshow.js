@@ -11,7 +11,7 @@
      
       pix[active].classList.toggle('is-active');
       items[active].classList.toggle('is-active');
-      active = i;
+      active = i;     
     })
   }
 }());
