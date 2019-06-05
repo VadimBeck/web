@@ -1,13 +1,11 @@
 .sidebar {
-  @include tablets {
-    display: none;
-  }
-}
-.listing {
-  position: fixed;
+  position: absolute;
   top: 20%;
   right: rem(45px);
   z-index: 2;
+  @include tablets {
+    display: none;
+  }
 }
 .listing__item {  
   width: rem(16px);
@@ -15,10 +13,10 @@
   border-radius: 50%;
   border: 1px solid transparent;
   margin-bottom: 5px;
-  transition: .2s;
+  transition: .8s;
   position: relative;
 
-  &:hover, &--active {
+  &:hover, &.is-active {
     border-color: #fff;
   }
 }

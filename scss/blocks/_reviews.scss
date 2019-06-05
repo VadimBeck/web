@@ -82,7 +82,8 @@
     background: #fff;
     border-radius:  0 0 45px 45px;
     @include tablets {
-      right: 40%;
+      left: 50%;
+      transform: translate(-50%);
     }
   }
   &.is-active .reviews__img-pic, &.is-active .reviews__text{

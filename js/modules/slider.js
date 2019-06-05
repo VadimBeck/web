@@ -69,7 +69,7 @@
     var mod = Math.abs(deltaX) - Math.abs(deltaY);
 
     if (deltaX < 0 && mod > 0) {
-      trottlenext();
+      trottleNext();
     } else if (deltaX > 0 && mod > 0) {
       trottlePrev();
     }   
