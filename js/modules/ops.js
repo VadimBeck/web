@@ -50,8 +50,10 @@ let OnePageScroll = function(){
 
   wrapper.addEventListener('touchend', function(e) {      
       let deltaY = e.changedTouches[0].clientY - clientY;
-      let way = deltaY > 0 ? 'up' : 'down';
-      scroll(way);   
+      if (Math.abs(deltaY)>50){
+        let way = deltaY > 0 ? 'up' : 'down';
+        scroll(way);
+      }
   }, false);
 
   menuLinks.forEach(function(elem) {    
