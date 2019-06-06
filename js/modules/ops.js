@@ -6,6 +6,7 @@ let OnePageScroll = function(){
   let menuLinks = d.querySelectorAll('.nav__link');  
   let points = d.querySelectorAll('.listing__item');
   let pause = false;
+  let clientY;
   
   function moveContent(index) {
     if (!pause) {
@@ -19,34 +20,20 @@ let OnePageScroll = function(){
 
       setTimeout(function() {        
         pause = false;
-      },700)
+      }, 900)
     }   
   }
 
   function scroll(way) {
-    let currentPos = (!content.style.top ? 0 : -(parseInt(content.style.top, 10)/100));
-    if (way == 'up' && currentPos > 0) {
-      currentPos--;
-      moveContent(currentPos);
+    let currentPos = !content.style.top ? 0 : -parseInt(content.style.top, 10)/100;
+    if (way == 'up' && currentPos > 0) {      
+      moveContent(currentPos-1);
     }
     if(way == 'down' && currentPos < sections.length-1) {
-      currentPos++;
-      moveContent(currentPos);
+      moveContent(currentPos+1);
     } 
   }
 
-  d.addEventListener('keyup', function(e) {
-    let currentPos = (!content.style.top ? 0 : -(parseInt(content.style.top, 10)/100)); 
-    if (e.keyCode == 38 && currentPos > 0) {      
-      currentPos--;
-      moveContent(currentPos);
-    }
-    if (e.keyCode == 40 && currentPos < sections.length-1) {      
-      currentPos++;
-      moveContent(currentPos);
-     }
-  })
-  
   wrapper.addEventListener('wheel', function(e) {
     let way = e.deltaY < 0 ? 'up' : 'down';
     scroll(way);
@@ -55,29 +42,16 @@ let OnePageScroll = function(){
     e.preventDefault();
   })
 
-  let clientX;
-  let clientY;
-  wrapper.addEventListener('touchstart', function(e) {  
-    clientX = e.touches[0].clientX;
-    clientY = e.touches[0].clientY;
+  wrapper.addEventListener('touchstart', function(e) {
+    if (/Android|AppleWebKit|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+      clientY = e.touches[0].clientY;
+    }
   }, false);
 
-  wrapper.addEventListener('touchend', function(e) {
-    let currentPos = (!content.style.top ? 0 : -(parseInt(content.style.top, 10)/100));
-    let deltaX = e.changedTouches[0].clientX - clientX;
-    let deltaY = e.changedTouches[0].clientY - clientY;
-    let mod = Math.abs(deltaY) - Math.abs(deltaX);
-
-    if (mod > 0) {
-      if (deltaY > 0 && currentPos > 0) {      
-        currentPos--;
-        moveContent(currentPos);
-      }
-      if (deltaY < 0 && currentPos < sections.length-1) {      
-        currentPos++;
-        moveContent(currentPos);
-       }
-    }    
+  wrapper.addEventListener('touchend', function(e) {      
+      let deltaY = e.changedTouches[0].clientY - clientY;
+      let way = deltaY > 0 ? 'up' : 'down';
+      scroll(way);   
   }, false);
 
   menuLinks.forEach(function(elem) {    
@@ -96,10 +70,22 @@ let OnePageScroll = function(){
       moveContent(index);
     })
   })
+
   let button = d.querySelector('.intro-button');
   button.addEventListener('click', function(e) {
     e.preventDefault();
     moveContent(7);
+  })
+
+  d.addEventListener('keyup', function(e) {
+    let way;
+    if (e.keyCode == 38) {
+      way = 'up';
+    }
+    if (e.keyCode == 40) {
+      way = 'down';
+     }
+     scroll(way);
   })
 }
 OnePageScroll();

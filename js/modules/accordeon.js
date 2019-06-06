@@ -58,7 +58,7 @@
           if (body.offsetWidth > 480) {
           currentText.style.width = widthCalc() + 'px';
           } else {
-            currentText.style.width = '100%';
+            currentText.style.width = 'auto';
           }
         }      
       })

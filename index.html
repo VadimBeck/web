@@ -40,7 +40,7 @@
                   <a href="#" data-index="6" class="nav__link">Как мы работаем</a>
                 </li>
                 <li class="nav__item">
-                  <a href="#" data-index="7" class="nav__link">Контакты</a>
+                  <a href="#" data-index="8" class="nav__link">Контакты</a>
                 </li>
               </ul>
             </nav>
@@ -153,7 +153,7 @@
             </div>
             <div class="candy-bar__slider">
               <ul class="candy-bar__list">
-                <li class="candy-bar__item">
+                <li class="candy-bar__item active">
                   <div class="candy-bar__img">
                     <img src="./img/candy-bar/bar1.png" alt="" class="candy-bar__img-pic">
                   </div>
@@ -352,14 +352,18 @@
       <section class="section work">
         <div class="container work__container">
           <h2 class="paige-title">Как мы работаем</h2>
-          <div class="work__content">
-            <video class="work__video" poster="./img/work/vid.jpg" src="#">
-            </video>
-            <button class="work__btn">
-              <svg class="work__btn-img"> 
+          <div class="video">
+            <video class="video__content" poster="./img/work/vid.jpg" src="./video.mp4"></video>
+            <button class="video__btn">
+              <svg class="video__btn-img"> 
                 <use xlink:href='./img/sprite.svg#play'></use>
               </svg>
             </button>
+            <div class="video__controls">
+              <button class="video__play"></button>
+              <progress class="video__progress" max="100" value="0"></progress>
+              <input class="video__volume" type="range">
+            </div>
           </div> 
         </div>
       </section>   
@@ -451,9 +455,7 @@
       </section>
   
       <section class="section contacts">
-        <div class="map">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d14383.23993857974!2d37.590961165449734!3d55.74828264977655!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sru!2sru!4v1557397711024!5m2!1sru!2sru" width="100%" height="100%" frameborder="0" style="border:0" allowfullscreen></iframe>
-        </div>   
+        <div id="map" class="map"></div>   
         <footer class="footer">
           <div class="footer__block">
             <address class="company-contacts">
@@ -536,7 +538,9 @@
     </aside>
   </div>
 
-  <script> src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"</script>
+  <script src="https://api-maps.yandex.ru/2.1/?apikey=<ваш API-ключ>&lang=ru_RU" type="text/javascript"></script>
+  <!-- <script> src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"</script> -->
+  <script src="./js/libs/jquery/jquery-3.4.1.min.js"></script>
   <script src="./js/script.min.js"></script>
 
 </body>

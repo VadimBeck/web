@@ -1,14 +1,15 @@
 const overlay = (function(){
   let body = document.querySelector('body');
   let modal = document.querySelector('.modal');
-  let modalInner = document.querySelector('.modal__inner');
+  let modalInner = document.querySelector('.modal__inner');  
 
   let modalText = document.createElement('div');
-  modalText.classList.add('modal__text');
-  let button = document.createElement('button');
+  modalText.classList.add('modal__text');  
 
   let openOverlay = function(content, reply) {
+    let button = document.createElement('button');
     modalText.textContent = content;
+    modalInner.innerHTML = "";
     if(reply) {
       button.classList.add('order-button');
       button.textContent = 'Закрыть';
@@ -50,6 +51,7 @@ const overlay = (function(){
 }());
 
 const ajaxForm = function(form) {
+ 
   let data = new FormData();
     data.append("name", form.elements.name.value);
     data.append("phone", form.elements.phone.value);
@@ -63,28 +65,51 @@ const ajaxForm = function(form) {
     xhr.send(data);
 
     return xhr;
+  
 }
 
-const submitForm = function(e) {
-  e.preventDefault();
+const submitForm = function() {  
   let form = document.querySelector('#order-form');
+  if (validateForm(form)) {
+    
   let request = ajaxForm(form);  
-
-  request.addEventListener('load', ()=> {
-    let reply = false;
-    if (request.status >=400) {
-      let content = 'Ошибка соединения с сервером, попробуйте позже';
-      overlay.open(`${content}. Ошибка ${request.status}`, reply);
-    } else if (request.response.status == 0) {
-      content = request.response.message;
-      overlay.open(content, reply);
-    } else {
-      content = 'Сообщение отправлено';
-      reply = true;
-      overlay.open(content, reply);
-    }
-  })
+    request.addEventListener('load', ()=> {
+      let reply = false;
+      if (request.status >=400) {
+        let content = 'Ошибка соединения с сервером, попробуйте позже';
+        overlay.open(`${content}. Ошибка ${request.status}`, reply);
+      } else if (request.response.status == 0) {
+        content = request.response.message;
+        overlay.open(content, reply);
+      } else {
+        content = 'Сообщение отправлено';
+        reply = true;
+        overlay.open(content, reply);
+      }
+    })
+  }
 }
 
-const form = document.querySelector('#order-form');
-form.addEventListener('submit', submitForm);
+function validateForm(form) {
+  let valid = true;
+  if(!validateField(form.elements.name)) {
+    valid = false;
+  }
+  if(!validateField(form.elements.phone)) {
+    valid = false;
+  }
+  if(!validateField(form.elements.textarea)) {
+    valid = false;
+  }
+  return valid;
+}
+function validateField(field) {
+  field.nextElementSibling.textContent = field.validationMessage;
+  return field.checkValidity();
+}
+
+let orderBtn = document.querySelector('#send');
+orderBtn.addEventListener('click', e => {
+  e.preventDefault();
+  submitForm();
+});

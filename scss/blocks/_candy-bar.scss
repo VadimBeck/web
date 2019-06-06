@@ -40,8 +40,9 @@
   margin: 0 10px;
 }
 .candy-bar__list {
+  position: relative;
   display: flex;
-  transition: transform .6s ease-in-out;
+  //transition: transform .6s ease-in-out;
 }
 .candy-bar__item {
   @include flex(space-between,center);
