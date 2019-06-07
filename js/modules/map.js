@@ -37,7 +37,7 @@ function init() {
       },
       {
         iconLayout: 'default#image',
-        iconImageHref: '../img/marker.png',
+        iconImageHref: 'https://vadimbeck.github.io/web/img/marker.png',
         iconImageSize: [46, 57],
         iconImageOffset: [-23, -57]
       });
@@ -45,7 +45,7 @@ function init() {
   var clusterer = new ymaps.Clusterer({
     clusterIcons: [
       {
-        href: '../img/marker.png',
+        href: 'https://vadimbeck.github.io/web/img/marker.png',
         size: [46, 57],
         offset: [-23, -57]
       }
