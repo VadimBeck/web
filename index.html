@@ -353,7 +353,11 @@
         <div class="container work__container">
           <h2 class="paige-title">Как мы работаем</h2>
           <div class="video">
-            <video class="video__content" poster="./img/work/vid.jpg" src="./video.mp4"></video>
+            <div class="video__wrap">
+              <video class="video__content" poster="./img/work/vid.jpg" >
+                <source src="./video.mp4" type="video/mp4">
+              </video>
+            </div>
             <button class="video__btn">
               <svg class="video__btn-img"> 
                 <use xlink:href='./img/sprite.svg#play'></use>
@@ -361,8 +365,11 @@
             </button>
             <div class="video__controls">
               <button class="video__play"></button>
-              <progress class="video__progress" max="100" value="0"></progress>
-              <input class="video__volume" type="range">
+              <input class="video__range video__range--progress" type="range" max="100" value="0">
+              <div class="video__sound">
+                <img src="./img/work/volume.png" alt="#" class="video__sound-img">
+                <input class="video__range video__range--volume" type="range">
+              </div>
             </div>
           </div> 
         </div>
