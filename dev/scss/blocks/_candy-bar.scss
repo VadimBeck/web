@@ -1,0 +1,142 @@
+.candy-bar {
+  background-color: $lightGrey;
+  position: relative;
+  flex-direction: row;
+  justify-content: center;
+
+  &::after {
+    position: absolute;
+    content: "";
+    width: 20%;
+    max-width: 200px;
+    height: 100%;
+    background: url(../img/candy-bar/leaf_2.png) right center / contain no-repeat;
+    right: 0;
+    top: 60%;
+    @include tablets {
+      top: 54%;
+      background-position: 6vw;
+    }
+    @include phones {
+      width: 30%;
+    }
+  }  
+}
+.candy-bar__container {
+  max-width: 1000px;
+  @include tablets {
+    max-width: 480px; 
+  }
+}
+.candy-bar__wrapper {
+  @include flex(center,center);
+  width: 100%;
+}
+.candy-bar__slider {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  z-index: 2;
+  margin: 0 10px;
+}
+.candy-bar__list {
+  position: relative;
+  display: flex;
+  //transition: transform .6s ease-in-out;
+}
+.candy-bar__item {
+  @include flex(space-between,center);
+  width: 100%;
+  flex-shrink: 0;
+  @include tablets {
+    flex-direction: column;
+    justify-content: center;   
+  }
+}
+.candy-bar__img {
+  width: 50%;
+  margin-right: 7%;
+  flex-shrink: 0;  
+  @include tablets {
+    width: 93%;
+  }
+}
+.candy-bar__text {
+  width: 50%;
+  line-height: 1.2;
+  padding-top: rem(25px);
+  @include tablets {
+    @include flex(center,center);
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+  }
+}
+.candy-bar__img-pic {
+  max-width: 100%;
+}
+.candy-bar__consist {
+  font-weight: $mediumFont;
+  font-size: rem(24px);
+}
+.candy-bar__desc {
+  color: $darkGrey;
+  max-width: 90%;
+  margin-top: rem(20px);
+  margin-bottom: rem(50px);
+  @include tablets {
+    max-width: 100%;
+    margin-bottom: rem(40px);
+  }
+  @include phones {
+    max-width: 100%;
+    margin: rem(10px) 0;
+  }
+}
+.candy-bar__specs {
+  display: flex;
+  @include tablets {
+    text-align: left;
+  }
+}
+.candy-bar__calorie {
+  margin-right: rem(50px);
+}
+.candy-bar__calorie-value, .candy-bar__weight-value{
+  font-weight: $boldFont;
+}
+.candy-bar__order{
+  @include flex(space-between, center);
+  margin-top: rem(20px);
+  max-width: 310px;
+}
+.candy-bar__price{
+  font-size: rem(60px);
+  @include tablets {
+    margin-right: rem(40px);
+  }
+}
+.candy-bar__btn{
+  display: flex;
+  align-items: center;
+  @include tablets {
+    height: 50%;
+    align-items: flex-end;
+    padding-bottom: rem(380px);
+  }
+}
+.scroll-btn {
+  width: 30px;
+  height: 30px;
+  outline: none;
+}
+.scroll-btn--back {
+  transform: rotate(90deg);
+}
+.scroll-btn--forward {
+  transform: rotate(-90deg);
+}
+.scroll-btn__img {
+  width: 30px;
+  height: 15px;
+}

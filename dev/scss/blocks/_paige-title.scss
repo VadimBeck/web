@@ -1,0 +1,54 @@
+.paige-title {
+  text-transform: uppercase;
+  font-weight: $boldFont;
+  font-size: rem(48px);
+  line-height: 1.1;
+  text-align: center;
+  margin-bottom: 0.5rem;
+  @include phones {    
+    font-size: rem(40px);
+  }
+}
+.intro__title {   
+  font-size: rem(60px);
+  line-height: 1;
+  text-align: left;
+  @include tablets {
+    text-align: center;
+  }
+  @include phones {
+    font-size: rem(48px);
+  }
+}
+.candy-bar__title {
+  text-align: left;
+  font-size: rem(36px);  
+  margin-bottom: rem(30px);
+  @include tablets {
+    text-align: center;
+    font-size: rem(30px);
+    margin-bottom: rem(10px);
+  }
+  @include phones {
+    font-size: rem(30px);
+  }
+}
+.team__title {
+  margin-bottom: rem(60px);
+  @include tablets {  
+    margin-bottom: rem(40px);
+  }
+  @include phones-small {
+    margin-bottom: rem(12px);
+  }
+}
+.menu__title {
+  margin-top: rem(100px);
+  margin-left: rem(80px);
+  @include tablets {  
+    margin-left: rem(40px);
+  }
+  @include phones {
+    margin-left: rem(12px);
+  }  
+}

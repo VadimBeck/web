@@ -1,0 +1,42 @@
+.team {
+  position: relative;
+
+  &::after {
+    content: url(../img/team/malina.png);
+    position: absolute;
+    left: 3%;
+    top: 100%;
+    transform: translateY(-50%);
+    z-index: 1;
+    @include tablets {
+      transform: scale(0.8) translateY(-65%);
+    }
+    @include phones {
+      transform: scale(0.6) translateY(-75%);
+    }    
+  }
+}
+.team__list {
+  @include flex(center,flex-start);
+  margin-left: rem(-15px);
+  min-height: rem(440px);
+  @include tablets {
+    flex-wrap: wrap;
+    padding-bottom: rem(50px);
+  }
+}
+.team__item {
+  width: calc(100% / 4 - 15px);   
+  margin-left: rem(15px);
+  text-align: center;
+  position: relative;
+  @include tablets {
+     width: calc(100% / 2 - 15px);
+  }
+  &:nth-child(2n){
+    margin-top: rem(50px);
+    @include tablets {
+      margin-top: 0;
+    } 
+  }  
+}
